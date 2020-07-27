@@ -1,0 +1,22 @@
+{
+  "name": "diploma",
+  "version": "1.0.0",
+  "description": "This is diploma project for Yandex.Praktikum",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abramsea/diploma.git"
+  },
+  "author": "Evgenii Abramson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abramsea/diploma/issues"
+  },
+  "homepage": "https://github.com/abramsea/diploma#readme",
+  "devDependencies": {
+    "webpack": "^4.44.0"
+  }
+}
