@@ -1,4 +1,4 @@
-# sprint11. Mesto project.  
+# Дипломная работа.  
 ## Check it out [here](https://abramsea.github.io/diploma/)
 
 ---
