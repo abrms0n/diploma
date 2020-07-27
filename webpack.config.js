@@ -12,9 +12,9 @@ new webpack.DefinePlugin({
 })
 
 module.exports = {
-  entry: { main: './src/js/index.js' },
+  entry: { main: './src/js/index.js' },    // точка входа
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist'),   // точка выхода
     filename: '[name].[chunkhash].js'
   },
   module: {
@@ -70,7 +70,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
-      template: './src/index.html',
+      template: './src/pages/index.html',
       filename: 'index.html'
     }),
     new WebpackMd5Hash(),
