@@ -1,0 +1,12 @@
+.search-form__button {
+    width: 168px;
+    height: 64px;
+    background: #2f71e5;
+    color: #fff;
+    box-shadow: none;
+    border-radius: 32px;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
