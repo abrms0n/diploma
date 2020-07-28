@@ -1,6 +1,4 @@
 import "../pages/index.css";
-import "../pages/about.css";
-import "../pages/analysis.css";
 import "../../node_modules/normalize.css/normalize.css"
 
 import Swiper from 'swiper/bundle';
