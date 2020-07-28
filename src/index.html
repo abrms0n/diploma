@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="<%=require('./images/favicon.ico').default%>">
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css%>">
-    <title>index</title>
+    <title>Анализатор новостей</title>
 </head>
 <body>
     <div class="search">
@@ -29,7 +30,7 @@
                 Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.
             </p>
             <form action="POST" class="search-form">
-                <input type="text" pattern="" placeholder="Введите тему новости" class="search-form__input">
+                <input type="text" pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$" placeholder="Введите тему новости" class="search-form__input" required>
                 <button class="search-form__button">Искать</button>
             </form>
         </div>
