@@ -1,0 +1,17 @@
+@import url(../vendor/fonts.css);
+@import url(../blocks/preloader/preloader.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/search/search.css);
+@import url(../blocks/nav/nav.css);
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #fff;
+    line-height: 1.2;
+    font-family: "Roboto";
+    font-weight: 400;
+}
