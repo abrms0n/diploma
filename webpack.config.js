@@ -53,7 +53,6 @@ module.exports = {
         options: {
             plugins: [
                     autoprefixer({
-                        overrideBrowserslist:  ['last 2 versions'],
                         cascade: false
                     })
                 ],
@@ -70,9 +69,24 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
-      template: './src/pages/index.html',
+      chunks: ['index'],
+      template: './src/index.html',
       filename: 'index.html'
     }),
+    new HtmlWebpackPlugin({
+        inject: false,
+        hash: true,
+        chunks: ['about'],
+        template: './src/about.html',
+        filename: 'about.html'
+      }),
+      new HtmlWebpackPlugin({
+        inject: false,
+        hash: true,
+        chunks: ['analysis'],
+        template: './src/analysis.html',
+        filename: 'analysis.html'
+      }),
     new WebpackMd5Hash(),
     new MiniCssExtractPlugin({
         filename: 'style.[contenthash].css'
