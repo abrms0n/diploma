@@ -42,6 +42,7 @@
   "dependencies": {
     "babel-loader": "^8.1.0",
     "babel-polyfill": "^6.26.0",
-    "core-js": "^3.4.1"
+    "core-js": "^3.4.1",
+    "swiper": "^6.0.4"
   }
 }

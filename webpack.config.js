@@ -68,22 +68,16 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: false,
-      hash: true,
-      chunks: ['index'],
       template: './src/index.html',
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
         inject: false,
-        hash: true,
-        chunks: ['about'],
         template: './src/about.html',
         filename: 'about.html'
       }),
       new HtmlWebpackPlugin({
         inject: false,
-        hash: true,
-        chunks: ['analysis'],
         template: './src/analysis.html',
         filename: 'analysis.html'
       }),
