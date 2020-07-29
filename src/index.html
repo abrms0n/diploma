@@ -3,39 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Дипломный проект Яндекс.Практикум - Анализатор новостей. Главная страница">
+    <meta name="author" content="Евгений Абрамсон">
     <link rel="icon" href="<%=require('./images/favicon.ico').default%>">
     <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css%>">
     <title>Анализатор новостей</title>
 </head>
 <body>
-    <div class="search">
-        <header class="header">
-            <img src="<%=require('./images/logo.svg').default%>" alt="logo" class="header__logo">
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__list-item">
-                        <a class="nav__link nav__link_active" href="./index.html">Главная</a>
-                    </li>
-                    <li class="nav__list-item">
-                        <a class="nav__link" href="./about.html">О проекте</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <div class="search__inner">
-            <h1 class="search__title">
-                Что в мире творится?
-            </h1>
-            <p class="search__subtitle">
-                Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.
-            </p>
-            <form action="POST" class="search-form">
-                <input type="text" pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$" placeholder="Введите тему новости" class="search-form__input" required>
-                <button class="search-form__button">Искать</button>
-            </form>
-        </div>
+    <main class="main">
+        <section class="search">
+            <header class="header">
+                <img src="<%=require('./images/logo.svg').default%>" alt="логотип проекта" class="header__logo">
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__list-item">
+                            <a class="nav__link nav__link_active" href="./index.html">Главная</a>
+                        </li>
+                        <li class="nav__list-item">
+                            <a class="nav__link" href="./about.html">О проекте</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="search__inner">
+                <h1 class="search__title">
+                    Что в мире творится?
+                </h1>
+                <p class="search__subtitle">
+                    Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.
+                </p>
+                <form action="POST" class="search-form">
+                    <input type="text" pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$" placeholder="Введите тему новости" class="search-form__input" required>
+                    <button class="search-form__button">Искать</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-    </div>
 
 
 
