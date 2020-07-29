@@ -38,6 +38,50 @@
                 </form>
             </div>
         </section>
+
+        <section class="about-author">
+            <img src="<%=require('./images/avatar.jpg').default%>" alt="аватар автора" class="about-author__avatar">
+            <div class="about-author__info">
+                <h2 class="page-title">
+                    Об авторе
+                </h2>
+                <p class="page-text">
+                    Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.
+                </p>
+                <p class="page-text">
+                    Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.
+                </p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p class="footer__copyright">&copy;&nbsp;2020 Evgenii Abramson</p>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__list-item">
+                        <a class="nav__link nav__link_theme_black" href="./index.html">Главная</a>
+                    </li>
+                    <li class="nav__list-item">
+                        <a class="nav__link nav__link_theme_black" href="./about.html">О проекте</a>
+                    </li>
+                    <li class="nav__list-item">
+                        <a class="nav__link nav__link_theme_black" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="footer__socials">
+                <li class="footer__socials-item">
+                    <a href="" class="footer__socials-link">
+                        <img src="<%=require('./images/github.svg').default%>" alt="github" class="footer__socials-icon">
+                    </a>
+                </li>
+                <li class="footer__socials-item">
+                    <a href="" class="footer__socials-link">
+                        <img src="<%=require('./images/facebook.svg').default%>" alt="facebook" class="footer__socials-icon">
+                    </a>
+                </li>
+            </ul>
+        </footer>
     </main>
 
 

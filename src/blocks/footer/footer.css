@@ -1,0 +1,13 @@
+@import url(./__copyright/footer__copyright.css);
+@import url(./__socials-icon/footer__socials-icon.css);
+@import url(./__socials-item/footer__socials-item.css);
+@import url(./__socials-link/footer__socials-link.css);
+@import url(./__socials/footer__socials.css);
+
+.footer {
+    padding: 30px 104px 28px 104px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #1a1b22;
+    display: flex;
+    justify-content: space-between;
+}

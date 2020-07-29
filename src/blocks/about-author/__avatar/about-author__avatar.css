@@ -1,0 +1,7 @@
+.about-author__avatar {
+    display: block;
+    border-radius: 50%;
+    max-width: 464px;
+    align-self: center;
+    margin: 0 56px 0 0;
+}
