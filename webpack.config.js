@@ -93,7 +93,7 @@ module.exports = {
       }),
     new WebpackMd5Hash(),
     new MiniCssExtractPlugin({
-        filename: 'styles/[name].[contenthash].css'
+        filename: '[name].[contenthash].css'
     }),
     new OptimizeCssAssetsPlugin({
         assetNameRegExp: /\.css$/g,
