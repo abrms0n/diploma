@@ -1,7 +1,0 @@
-.footer__socials-item {
-    list-style: none;
-}
-
-.footer__socials-item:not(:last-of-type) {
-    margin: 0 24px 0 0;
-}
