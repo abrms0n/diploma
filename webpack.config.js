@@ -57,7 +57,7 @@ module.exports = {
       {
         test: /\.css$/i,
         loader: 'postcss-loader',
-        options: {                              // сюда
+        options: {                              
             plugins: [
                     autoprefixer({
                         cascade: false

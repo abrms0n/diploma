@@ -1,0 +1,16 @@
+button.button_theme_blue {
+    width: 168px;
+    background: #2f71e5;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.button_theme_blue:hover {
+    background: #347eff;
+}
+
+.button_theme_blue:active {
+    background: #2a65cc;
+}

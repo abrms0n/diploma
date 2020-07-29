@@ -1,0 +1,6 @@
+.found__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+    margin: 64px 0;
+}  

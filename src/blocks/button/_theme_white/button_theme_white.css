@@ -1,0 +1,14 @@
+button.button_theme_white {
+    margin: 0 auto;
+    background: #fff;
+    color: #1a1b22;
+    width: 288px;
+}
+
+.button_theme_white:hover {
+    background: #dddcdc;
+}
+
+.button_theme_white:active {
+    background: #b6b6b6;
+}

@@ -1,0 +1,18 @@
+@import url(./_theme_blue/button_theme_blue.css);
+@import url(./_theme_white/button_theme_white.css);
+
+.button {
+    box-shadow: none;
+    height: 64px;
+    border-radius: 32px;
+    border: none;
+    transition: all .2s;
+    display: block;
+    cursor: pointer;
+}
+
+.button:focus {
+    border: 2px solid #ac0101;
+    outline: none;
+}
+

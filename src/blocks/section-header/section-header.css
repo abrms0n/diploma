@@ -1,0 +1,8 @@
+@import url(./__link/section-header__link.css);
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
