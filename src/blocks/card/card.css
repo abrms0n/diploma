@@ -1,11 +1,11 @@
-@import url(./__pic-box/news-card__pic-box.css);
-@import url(./__pic/news-card__pic.css);
-@import url(./__info/news-card__info.css);
-@import url(./__date/news-card__date.css);
-@import url(./__intro/news-card__intro.css);
-@import url(./__source/news-card__source.css);
+@import url(./__pic-box/card__pic-box.css);
+@import url(./__pic/card__pic.css);
+@import url(./__info/card__info.css);
+@import url(./__date/card__date.css);
+@import url(./__intro/card__intro.css);
+@import url(./__source/card__source.css);
 
-.news-card {
+.card {
     background: #fff;
     line-height: 0;
     color: #1a1b22;

@@ -1,7 +1,7 @@
-.news-card__intro {
+.card__intro {
     font-size: 16px;
     line-height: 22px;
-    margin: 16px 0 36px 0;
+    margin: 16px 0 0 0;
     text-overflow: ellipsis;
     line-clamp: 4;
     display: -webkit-box;

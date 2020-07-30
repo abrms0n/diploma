@@ -10,11 +10,148 @@
     <title>О проекте</title>
 </head>
 <body>
+    <header class="header">
+        <img src="<%=require('./images/logo-dark.svg').default%>" alt="логотип проекта" class="header__logo">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__list-item">
+                        <a class="nav__link" href="./index.html">Главная</a>
+                    </li>
+                    <li class="nav__list-item">
+                        <a class="nav__link nav__link_active-black" href="./about.html">О проекте</a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+
     <main class="main">
-        <h1>About</h1>
-        back to <a href="./index.html">Index</a>
-        go to <a href="./analysis.html">Analysis</a>
+        <section class="clients">
+            <h1 class="page-title">Клиентам</h1>
+            <p class="page-text">            Этот сайт — дипломный проект студента Яндекс.Практикума. Его цель — показать, чему научился студент, какими технологиями владеет.
+            </p>
+            <p class="page-text">Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым. Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.
+            </p>
+            <p class="page-text">Карточки с новостями приходят с сервера и обрабатываются асинхронно. То есть сайт продолжает работать, пока от сервера приходит ответ. Это повышает удобство использования сервиса.
+            </p>
+            <p class="page-text">При создании проекта была использована сборка технологией Webpack. Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее. Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем, у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.
+            </p>
+            <p class="page-text">Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.
+            </p>
+        </section>
+
+        <section class="tech">
+            <div class="tech__title-box">
+                <h2 class="page-title">
+                    Используемые технологии
+                </h2>
+            </div>
+            <div class="tech__elem-box">
+                <div class="tech-elem">
+                    <h3 class="tech-elem__title">
+                        HTML
+                    </h3>
+                    <img src="<%=require('./images/html5.svg').default%>" alt="HTML" class="tech-elem__pic">
+                </div>
+
+                <div class="tech-elem">
+                    <h3 class="tech-elem__title">
+                        CSS
+                    </h3>
+                    <img src="<%=require('./images/css3.svg').default%>" alt="CSS" class="tech-elem__pic">
+                </div>
+
+                <div class="tech-elem">
+                    <h3 class="tech-elem__title">
+                        Java Script
+                    </h3>
+                    <img src="<%=require('./images/js.svg').default%>" alt="JavaScript" class="tech-elem__pic">
+                </div>
+
+                <div class="tech-elem">
+                    <h3 class="tech-elem__title">
+                        Webpack
+                    </h3>
+                    <img src="<%=require('./images/webpack.svg').default%>" alt="Webpack" class="tech-elem__pic">
+                </div>
+            </div>
+        </section>
+
+        <section class="about-author">
+            <img src="<%=require('./images/avatar.jpg').default%>" alt="аватар автора" class="about-author__avatar">
+            <div class="about-author__info">
+                <h2 class="page-title">
+                    Об авторе
+                </h2>
+                <p class="page-text">
+                    Это блок с описанием автора проекта. Здесь следует указать, как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.
+                </p>
+                <p class="page-text">
+                    Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились, и чем можете помочь потенциальным заказчикам.
+                </p>
+            </div>
+        </section>
+
+        <section class="slider">
+            <div class="section-header">
+                <h2 class="page-title">
+                    История коммитов из GitHub
+                </h2>
+                <a href="https://github.com/abramsea" class="section-header__link">
+                    Открыть в GitHub
+                </a>
+            </div>
+
+            <div class="swiper-container">
+
+                <div class="swiper-wrapper">
+    
+                    <div class="swiper-slide">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                </div>
+    
+                <div class="swiper-pagination"></div>
+    
+    
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+    
+    
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </section>
+
+        
     </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">&copy;&nbsp;2020 Evgenii Abramson</p>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__list-item">
+                    <a class="nav__link nav__link_theme_black" href="./index.html">Главная</a>
+                </li>
+                <li class="nav__list-item">
+                    <a class="nav__link nav__link_theme_black" href="./about.html">О проекте</a>
+                </li>
+                <li class="nav__list-item">
+                    <a class="nav__link nav__link_theme_black" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+                </li>
+            </ul>
+        </nav>
+        <ul class="footer__socials">
+            <li class="footer__socials-item">
+                <a href="https://facebook.com/abramsea" target="_blank" class="footer__socials-link">
+                    <img src="<%=require('./images/github.svg').default%>" alt="github" class="footer__socials-icon">
+                </a>
+            </li>
+            <li class="footer__socials-item">
+                <a href="https://github.com/abramsea" target="_blank" class="footer__socials-link">
+                    <img src="<%=require('./images/facebook.svg').default%>" alt="facebook" class="footer__socials-icon">
+                </a>
+            </li>
+        </ul>
+    </footer>
     <script src="<%=htmlWebpackPlugin.files.js%>"></script>
 </body>
 </html>

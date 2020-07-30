@@ -1,11 +1,12 @@
-@import url(./_active/nav__link_active.css);
+@import url(./_active-white/nav__link_active-white.css);
+@import url(./_active-black/nav-link_active-black.css);
 @import url(./_theme_black/nav__link_theme_black.css);
 
 .nav__link {
     color: #b6bcbf;
     font-size: 18px;
     text-decoration: none;
-    padding: 30px 0 23px 0;
+    padding: 26px 0 23px 0;
     display: block;
     transition: all .2s;
 }
