@@ -12,11 +12,11 @@
 <body>
     <main class="main">
         <header class="header">
-            <img src="<%=require('./images/logo.svg').default%>" alt="логотип проекта" class="header__logo">
+            <img src="<%=require('./images/logo-dark.svg').default%>" alt="логотип проекта" class="header__logo">
             <nav class="nav">
                 <ul class="nav__list">
                     <li class="nav__list-item">
-                        <a class="nav__link nav__link_active-white" href="./index.html">Главная</a>
+                        <a class="nav__link" href="./index.html">Главная</a>
                     </li>
                     <li class="nav__list-item">
                         <a class="nav__link" href="./about.html">О проекте</a>
@@ -27,13 +27,48 @@
 
         <main class="main">
 
-            <section class="breadcrumbs">
-                <a href="./index.html" class="breadcrumb">
-                    Главная
-                </a>
-                <p class="breadcrumb breadcrumb_active">
+            <ul class="breadcrumbs">
+                <li class="breadcrumbs__elem">
+                    <a href="./index.html" class="breadcrumbs__link">
+                        Главная
+                    </a>
+                </li>
+                <li class="breadcrumbs__elem breadcrumbs__elem_disabled">
                     Аналитика
-                </p>
+                </li>
+            </ul>
+
+            <section class="answer">
+                <h1 class="page-title">
+                    Вы спросили: «Путешествия»
+                </h1>
+                <div class="answer__numbers">
+                    <p class="page-text">
+                        Новостей за неделю: 
+                        <span class="page-text page-text_weight_bold">
+                            34 324
+                        </span>
+                    </p>
+                    <p class="page-text page-text_no-margin">
+                        Упоминаний в заголовках:
+                        <span class="page-text page-text_weight_bold">
+                            235
+                        </span>
+                    </p>
+                </div>
+            </section>
+
+            <section class="analytics">
+                <h2 class="page-title page-title_size_sm">
+                    Аналитика по дням
+                </h2>
+                <div class="analytics__column-names">
+                    <p class="analytics__column-name">дата (август)</p>
+                    <p class="analytics__column-name">кол-во упоминаний</p>
+                </div>
+                <div class="analytics__scale">
+
+                </div>
             </section>
 
 

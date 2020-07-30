@@ -1,0 +1,9 @@
+@import url(./__scale/analytics__scale.css);
+@import url(./__column-names/analytics__column-names.css);
+@import url(./__column-name/analytics__column-name.css);
+
+.analytics {
+    padding: 80px 104px;
+    background: #f5f6f7;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}

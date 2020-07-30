@@ -12,6 +12,19 @@
   src: url("./fonts/Roboto-Regular.woff") format("woff");
 }
 
+@font-face {
+  font-family: 'Roboto';
+  font-style:  bold;
+  font-weight: 600;
+  src: url("./fonts/Roboto-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style:  bold;
+  font-weight: 600;
+  src: url("./fonts/Roboto-Bold.woff") format("woff");
+}
 
 @font-face {
   font-family: 'Roboto Slab';

@@ -1,0 +1,14 @@
+.analytics__column-name {
+    font-size: 12px;
+    line-height: 16px;
+    color: #b6bcbf;
+    text-transform: uppercase;
+}
+
+.analytics__column-name:not(:first-of-type) {
+    margin: 0 0 0 32px;
+}
+
+.analytics__column-name:first-of-type {
+    max-width: 80px;
+}

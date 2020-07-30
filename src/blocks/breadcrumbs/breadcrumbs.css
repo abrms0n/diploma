@@ -1,0 +1,9 @@
+@import url(./__elem/breadcrumbs__elem.css);
+@import url(./__link/breadcrumbs__link.css);
+
+.breadcrumbs {
+    display: flex;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    padding: 40px 104px 0 104px;
+    list-style: none;
+}

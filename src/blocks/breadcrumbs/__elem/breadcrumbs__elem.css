@@ -1,0 +1,15 @@
+@import url(./_disabled/breadcrumbs__elem_disabled.css);
+
+.breadcrumbs__elem {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.breadcrumbs__elem::after {
+    content: " /";
+    opacity: .5;
+}
+
+.breadcrumbs__elem:not(:first-of-type) {
+    margin: 0 0 0 4px;
+}

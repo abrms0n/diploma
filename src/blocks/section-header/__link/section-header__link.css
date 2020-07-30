@@ -7,7 +7,7 @@
 }
 
 .section-header__link::after {
-    content: ">";
+    content: " >";
 }
 
 .section-header__link:hover {
