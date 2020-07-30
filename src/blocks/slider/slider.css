@@ -1,5 +1,9 @@
+@import url(./__blur/slider__blur.css);
+@import url(./__button/slider__button.css);
+@import url(./__dots/slider__dots.css);
+
 .slider {
-    padding: 72px 104px 136px 104px;
-    background: #d1d2d6;
+    background: #f5f6f7;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    padding: 0 0 60px 0;
 }

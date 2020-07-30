@@ -91,36 +91,145 @@
             </div>
         </section>
 
-        <section class="slider">
+        <section class="slider-header">
             <div class="section-header">
                 <h2 class="page-title">
                     История коммитов из GitHub
                 </h2>
-                <a href="https://github.com/abramsea" class="section-header__link">
+                <a href="https://github.com/abramsea" target="_blank" class="section-header__link">
                     Открыть в GitHub
                 </a>
             </div>
-
-            <div class="swiper-container">
-
-                <div class="swiper-wrapper">
-    
-                    <div class="swiper-slide">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
-                </div>
-    
-                <div class="swiper-pagination"></div>
-    
-    
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-    
-    
-                <div class="swiper-scrollbar"></div>
-            </div>
         </section>
+        
+        <section class="slider swiper-container">
 
+            <div class="swiper-wrapper">
+                <a href="https://lenta.ru" target="_blank" class="card card_no-shadow swiper-slide">
+                    <div class="card__info">
+                        <p class="card__date">
+                            14 августа, 2019
+                        </p>
+                        <div class="card__author">
+                            <img src="<%=require('./images/anton.jpg').default%>" alt="Антон Долинин" class="card__avatar">
+                            <div class="card__name-box">
+                                <h3 class="page-title page-title_size_sm">
+                                    Антон Долинин
+                                </h3>
+                                <p class="card__email">
+                                    anton@yandex.ru
+                                </p>
+                            </div>
+                        </div>
+                        <p class="card__intro">
+                            Emmet (formerly Zen Coding) is a web-
+developer’s toolkit that can greatly improve your HTML & CSS workflow.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="https://lenta.ru" target="_blank" class="card card_no-shadow swiper-slide">
+                    <div class="card__info">
+                        <p class="card__date">
+                            14 августа, 2019
+                        </p>
+                        <div class="card__author">
+                            <img src="<%=require('./images/maria.jpg').default%>" alt="Мария Фёдорова" class="card__avatar">
+                            <div class="card__name-box">
+                                <h3 class="page-title page-title_size_sm">
+                                    Мария Фёдорова
+                                </h3>
+                                <p class="card__email">
+                                    mariiifed@yandex.ru
+                                </p>
+                            </div>
+                        </div>
+
+                        <p class="card__intro">
+                            You can install this plugin directly from NetBeans Plugin Portal: in NetBeans, open  <code>Tools > </code> <code> Plugins > Available plugins</code> and find and install Emmet plugin.
+                        </p>
+                    </div>
+                </a>
+                
+                <a href="https://lenta.ru" target="_blank" class="card card_no-shadow swiper-slide">
+                    <div class="card__info">
+                        <p class="card__date">
+                            14 августа, 2019
+                        </p>
+                        <div class="card__author">
+                            <img src="<%=require('./images/inga.jpg').default%>" alt="Мария Фёдорова" class="card__avatar">
+                            <div class="card__name-box">
+                                <h3 class="page-title page-title_size_sm">
+                                    Инга Иванова
+                                </h3>
+                                <p class="card__email">
+                                    ingaiva@yandex.ru
+                                </p>
+                            </div>
+                        </div>
+                        <p class="card__intro">
+                            With Emmet, you can type CSS-like expressions 
+                    that can be dynamically parsed, and produce 
+                    output depending on what you type in the abbreviature and some more text
+                        </p>
+                    </div>
+                </a>
+
+                <a href="https://lenta.ru" target="_blank" class="card card_no-shadow swiper-slide">
+                    <div class="card__info">
+                        <p class="card__date">
+                            14 августа, 2019
+                        </p>
+                        <div class="card__author">
+                            <img src="<%=require('./images/dekart.jpg').default%>" alt="Мария Фёдорова" class="card__avatar">
+                            <div class="card__name-box">
+                                <h3 class="page-title page-title_size_sm">
+                                    Рене Декарт
+                                </h3>
+                                <p class="card__email">
+                                    xyz@yandex.ru
+                                </p>
+                            </div>
+                        </div>
+
+                        <p class="card__intro">
+                            Я мыслю, следовательно, существую.
+                        </p>
+                    </div>
+                </a>
+
+                <a href="https://lenta.ru" target="_blank" class="card card_no-shadow swiper-slide">
+                    <div class="card__info">
+                        <p class="card__date">
+                            14 августа, 2019
+                        </p>
+                        <div class="card__author">
+                            <img src="<%=require('./images/avatar.jpg').default%>" alt="Мария Фёдорова" class="card__avatar">
+                            <div class="card__name-box">
+                                <h3 class="page-title page-title_size_sm">
+                                    Евгений Абрамсон
+                                </h3>
+                                <p class="card__email">
+                                    the-kvakz@yandex.ru
+                                </p>
+                            </div>
+                        </div>
+
+                        <p class="card__intro">
+                            Работа в IT это правильный выбор для меня.
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="slider__dots swiper-pagination"></div>
+
+
+            <div class="slider__button swiper-button-prev"></div>
+            <div class="slider__button swiper-button-next"></div>
+
+            <div class="slider__blur"></div>
+        </section>
         
     </main>
 

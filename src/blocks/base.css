@@ -10,3 +10,9 @@
     line-height: 1.2;
     font-weight: 400;
 }
+
+code {
+    background: #f5f6f7;
+    border: 1px solid #dddddd;
+    padding: 0 4px;
+}
