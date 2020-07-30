@@ -1,0 +1,10 @@
+.news-card__source {
+    color: #b6bcbf;
+    font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 20px;
+    position: absolute;
+    left: 24px;
+    bottom: 24px;
+}

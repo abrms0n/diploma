@@ -3,8 +3,17 @@
     line-height: 24px;
     color: #1a1b22;
     text-decoration: none;
+    transition: all .2s;
 }
 
 .section-header__link::after {
     content: ">";
+}
+
+.section-header__link:hover {
+    opacity: .5;
+}
+
+.section-header__link:focus {
+    outline: 1px dotted #ac0101;
 }

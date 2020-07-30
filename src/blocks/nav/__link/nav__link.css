@@ -11,10 +11,9 @@
 }
 
 .nav__link:hover {
-    color: #2f71e5;
+    color: #ac0101;
 }
 
 .nav__link:focus {
-    outline: none;
-    border-bottom: 3px solid #ac0101;
+    outline: 1px dotted #ac0101;
 }

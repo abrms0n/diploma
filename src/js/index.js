@@ -4,7 +4,7 @@ import "../../node_modules/normalize.css/normalize.css"
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 
-var mySwiper = new Swiper('.swiper-container', {
+const mySwiper = new Swiper('.swiper-container', {
     // Optional parameters
     loop: true,
   
@@ -24,3 +24,4 @@ var mySwiper = new Swiper('.swiper-container', {
       el: '.swiper-scrollbar',
     },
   })
+

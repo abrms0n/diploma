@@ -1,3 +1,7 @@
 .footer__socials-link {
     line-height: 0;
 }
+
+.footer__socials-link:focus {
+    outline: 1px dotted #ac0101;
+}

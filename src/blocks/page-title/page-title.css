@@ -1,3 +1,6 @@
+@import url(./_size_lg/page-title_size_lg.css);
+@import url(./_size_sm/page-title_size_sm.css);
+
 .page-title {
     font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
     font-weight: 400;

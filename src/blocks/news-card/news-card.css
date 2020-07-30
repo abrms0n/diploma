@@ -1,7 +1,19 @@
+@import url(./__pic-box/news-card__pic-box.css);
+@import url(./__pic/news-card__pic.css);
+@import url(./__info/news-card__info.css);
+@import url(./__date/news-card__date.css);
+@import url(./__intro/news-card__intro.css);
+@import url(./__source/news-card__source.css);
+
 .news-card {
-    background: green;
-    height: 20em;
+    background: #fff;
+    line-height: 0;
+    color: #1a1b22;
+    text-decoration: none;
     max-width: 400px;
     border-radius: 10px;
     box-shadow: 0 2px 2px rgba(0,0,0,.3);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    position: relative;
+    overflow: hidden;
 }
