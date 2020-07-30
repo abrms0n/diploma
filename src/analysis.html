@@ -11,9 +11,62 @@
 </head>
 <body>
     <main class="main">
-        <h1>Тут еще нет но скоро будет</h1>
-        back to <a href="./index.html">Index</a>
-        go to <a href="./about.html">About</a>
+        <header class="header">
+            <img src="<%=require('./images/logo.svg').default%>" alt="логотип проекта" class="header__logo">
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__list-item">
+                        <a class="nav__link nav__link_active-white" href="./index.html">Главная</a>
+                    </li>
+                    <li class="nav__list-item">
+                        <a class="nav__link" href="./about.html">О проекте</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main">
+
+            <section class="breadcrumbs">
+                <a href="./index.html" class="breadcrumb">
+                    Главная
+                </a>
+                <p class="breadcrumb breadcrumb_active">
+                    Аналитика
+                </p>
+            </section>
+
+
+        </main>
+
+        <footer class="footer">
+            <p class="footer__copyright">&copy;&nbsp;2020 Evgenii Abramson</p>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__list-item">
+                        <a class="nav__link nav__link_theme_black" href="./index.html">Главная</a>
+                    </li>
+                    <li class="nav__list-item">
+                        <a class="nav__link nav__link_theme_black" href="./about.html">О проекте</a>
+                    </li>
+                    <li class="nav__list-item">
+                        <a class="nav__link nav__link_theme_black" href="https://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="footer__socials">
+                <li class="footer__socials-item">
+                    <a href="https://facebook.com/abramsea" target="_blank" class="footer__socials-link">
+                        <img src="<%=require('./images/github.svg').default%>" alt="github" class="footer__socials-icon">
+                    </a>
+                </li>
+                <li class="footer__socials-item">
+                    <a href="https://github.com/abramsea" target="_blank" class="footer__socials-link">
+                        <img src="<%=require('./images/facebook.svg').default%>" alt="facebook" class="footer__socials-icon">
+                    </a>
+                </li>
+            </ul>
+        </footer>
     </main>
     <script src="<%=htmlWebpackPlugin.files.js%>"></script>
 </body>

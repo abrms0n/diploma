@@ -2,3 +2,8 @@ a.nav__link_theme_black {
     color: #1a1b22;
     padding: 0;
 }
+
+a.nav__link_theme_black:hover {
+    opacity: .5;
+    color: #1a1b22;
+}

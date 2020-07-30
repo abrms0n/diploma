@@ -1,9 +1,25 @@
 @import url(./__blur/slider__blur.css);
-@import url(./__button/slider__button.css);
-@import url(./__dots/slider__dots.css);
 
-.slider {
+div.slider {
     background: #f5f6f7;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     padding: 0 0 60px 0;
+}
+
+.swiper-button-prev::after, .swiper-button-next::after {
+    display: none;
+}
+
+div.swiper-button-prev {
+    left: 32px;
+    top: 40%;
+}
+
+div.swiper-button-next {
+    right: 32px;
+    top: 40%;
+}
+
+span.swiper-pagination-bullet-active {
+    background: #1a1b22;
 }

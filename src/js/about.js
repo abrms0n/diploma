@@ -4,7 +4,7 @@ import "../../node_modules/normalize.css/normalize.css"
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 
-const mySwiper = new Swiper('.swiper-container', {
+const mySwiper = new Swiper('.slider', {
     // Optional parameters
     loop: false,
     speed: 500,
@@ -12,17 +12,12 @@ const mySwiper = new Swiper('.swiper-container', {
     spaceBetween: 16,
     uniqueNavElements: true,
     slidesOffsetBefore: 104,
-  
-    // If we need pagination
     pagination: {
       el: '.swiper-pagination',
     },
-
     scrollbar: false,
-  
-    // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.slider__button-next',
+      prevEl: '.slider__button-prev',
     }
   })

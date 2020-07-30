@@ -45,13 +45,21 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [
-                (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+        sideEffects: true,
+        use: [(isDev ? 'style-loader' : 
+                {   
+                    loader: MiniCssExtractPlugin.loader,
+                    options: { publicPath: '../' }
+                }),
+                
                 { 
                     loader: 'css-loader', 
                     options: { importLoaders: 2 }
                 },      
-                    'postcss-loader'
+                { 
+                    loader: 'postcss-loader',
+                    options: { publicPath: '../' },
+                }
             ]
       },
       {
@@ -93,7 +101,7 @@ module.exports = {
       }),
     new WebpackMd5Hash(),
     new MiniCssExtractPlugin({
-        filename: '[name].[contenthash].css'
+        filename: 'styles/[name].[contenthash].css'
     }),
     new OptimizeCssAssetsPlugin({
         assetNameRegExp: /\.css$/g,
