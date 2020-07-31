@@ -1,0 +1,17 @@
+.footer__socials {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .footer__socials {
+        order: 2;
+        align-self: flex-end;
+    }
+}
+
+@media screen and (max-width: 388px) {
+    .footer__socials {
+        align-self: flex-start;
+    }
+}

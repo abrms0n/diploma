@@ -1,0 +1,11 @@
+.card__intro {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 16px 0 0 0;
+    text-overflow: ellipsis;
+    line-clamp: 4;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

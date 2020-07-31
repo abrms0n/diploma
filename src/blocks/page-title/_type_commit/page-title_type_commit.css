@@ -1,0 +1,6 @@
+@media screen and (max-width: 1024px) {
+    .page-title.page-title_type_commit {
+        font-size: 20px;
+        line-height: 24px;
+    }
+}

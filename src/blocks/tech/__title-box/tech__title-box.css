@@ -1,0 +1,9 @@
+.tech__title-box {
+    max-width: 344px;
+}
+
+@media screen and (max-width: 1024px) {
+    .tech__title-box {
+        max-width: 336px;
+    }
+}

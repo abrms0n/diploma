@@ -1,0 +1,19 @@
+.table__whisker {
+    background: #2f71e5;
+    color: #fff;
+    height: 24px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    margin: 32px 0 0 0;
+    padding: 0 0 0 6px;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .table__whisker {
+        margin: 8px 0 0 0;
+        padding: 0 0 0 4px;
+    }
+}

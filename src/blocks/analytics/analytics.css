@@ -1,0 +1,17 @@
+.analytics {
+    padding: 80px 104px;
+    background: #f5f6f7;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+    .analytics {
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .analytics {
+        padding: 24px 16px;
+    }
+}

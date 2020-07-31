@@ -1,0 +1,29 @@
+@import url(./__pic-box/card__pic-box.css);
+@import url(./__pic/card__pic.css);
+@import url(./__info/card__info.css);
+@import url(./__date/card__date.css);
+@import url(./__intro/card__intro.css);
+@import url(./__source/card__source.css);
+@import url(./_type_commit/card_type_commit.css);
+@import url(./__author/card__author.css);
+@import url(./__avatar/card__avatar.css);
+@import url(./__email/card__email.css);
+
+.card {
+    background: #fff;
+    line-height: 0;
+    color: #1a1b22;
+    text-decoration: none;
+    max-width: 400px;
+    border-radius: 10px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+    .card {
+        max-width: 336px;
+    }
+}

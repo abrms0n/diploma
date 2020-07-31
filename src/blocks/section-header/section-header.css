@@ -1,0 +1,20 @@
+@import url(./__link/section-header__link.css);
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+    .section-header {
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .section-header {
+        flex-direction: column;
+    }   
+}

@@ -1,0 +1,32 @@
+.button.button_theme_transparent {
+    margin: 0 auto;
+    border: 1px solid #1a1b22;
+    color: #1a1b22;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    display: none;
+    max-width: 320px;
+}
+
+.button_theme_transparent:hover {
+    background: #dddcdc;
+}
+
+.button_theme_transparent:active {
+    background: #b6b6b6;
+}
+
+@media screen and (max-width: 767px) {
+    .button.button_theme_transparent {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .button.button_theme_transparent {
+        width: calc(100% - 32px);
+        max-width: 336px;
+        margin: 12px auto 0 auto;
+    }
+}

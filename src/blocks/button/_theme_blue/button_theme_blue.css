@@ -1,0 +1,29 @@
+.button.button_theme_blue {
+    width: 168px;
+    background: #2f71e5;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.button_theme_blue:hover {
+    background: #347eff;
+}
+
+.button_theme_blue:active {
+    background: #2a65cc;
+}
+
+@media screen and (max-width: 1024px) {
+    .button.button_theme_blue {
+        width: 160px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .button.button_theme_blue {
+        width: 100%;
+        position: static;
+    }
+}

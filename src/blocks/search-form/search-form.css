@@ -1,0 +1,7 @@
+@import url(./__input/search-form__input.css);
+
+.search-form {
+    width: 100%;
+    position: relative;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}

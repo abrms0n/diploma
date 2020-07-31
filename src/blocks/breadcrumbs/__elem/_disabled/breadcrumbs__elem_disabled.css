@@ -1,0 +1,7 @@
+.breadcrumbs__elem_disabled {
+    opacity: .5;
+}
+
+.breadcrumbs__elem_disabled.breadcrumbs__elem_disabled::after {
+    content: "";
+}

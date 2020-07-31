@@ -1,0 +1,22 @@
+@import url(./__empty/table__empty.css);
+@import url(./__percent/table__percent.css);
+@import url(./__text-grey/table__text-grey.css);
+@import url(./__scale/table__scale.css);
+@import url(./__date/table__date.css);
+@import url(./__row/table__row.css);
+@import url(./__text-black/table__text-black.css);
+@import url(./__whisker/table__whisker.css);
+@import url(./__percents/table__percents.css);
+@import url(./__date-row/table__date-row.css);
+
+.table {
+    width: 100%;
+    margin: 60px 0 0 0;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 767px) {
+    .table {
+        margin: 16px 0 0 0;
+    }
+}

@@ -1,0 +1,9 @@
+.table__row {
+    height: 72px;
+}
+
+@media screen and (max-width: 767px) {
+    .table__row {
+        height: 44px;
+    }
+}

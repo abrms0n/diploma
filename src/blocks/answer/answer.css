@@ -1,0 +1,16 @@
+.answer {
+    padding: 80px 104px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+    .answer {
+        padding: 64px 40px 40px 40px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .answer {
+        padding: 16px 16px 24px 16px;
+    }
+}

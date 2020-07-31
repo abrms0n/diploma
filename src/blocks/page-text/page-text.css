@@ -1,0 +1,16 @@
+@import url(./_weight_bold/page-text_weight_bold.css);
+@import url(./_no-margin/page-text_no-margin.css);
+
+.page-text {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    margin: 1.5em 0 0 0;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 1024px) {
+    .page-text {
+        margin: 16px 0 0 0;
+    }
+}

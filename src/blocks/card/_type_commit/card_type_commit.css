@@ -1,0 +1,16 @@
+.card.card_type_commit {
+    height: 288px;
+}
+
+@media screen and (max-width: 1024px) {
+    .card.card_type_commit {
+        height: 242px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card.card_type_commit {
+        max-width: 288px;
+        height: 264px;
+    }
+}

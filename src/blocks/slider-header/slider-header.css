@@ -1,0 +1,17 @@
+.slider-header {
+    padding: 72px 104px 64px 104px;
+    background: #f5f6f7;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+    .slider-header {
+        padding: 40px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .slider-header {
+        padding: 32px 16px;
+    }   
+}

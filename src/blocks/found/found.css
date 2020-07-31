@@ -1,0 +1,20 @@
+@import url(./__cards/found__cards.css);
+
+.found {
+    background: #f5f6f7;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    color: #1a1b22;
+    padding: 80px 104px;
+}
+
+@media screen and (max-width: 1024px) {
+    .found {
+        padding: 40px 40px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .found {
+        padding: 32px 16px 44px 16px;
+    }   
+}

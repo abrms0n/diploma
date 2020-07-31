@@ -1,0 +1,22 @@
+@import url(./__logo/header__logo.css);
+
+.header {
+    padding: 0 104px;
+    border-bottom: 1px solid rgba(196, 196, 196, .3);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 1024px) {
+    .header {
+        padding: 0 40px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header {
+        padding: 0 16px;
+    }
+}

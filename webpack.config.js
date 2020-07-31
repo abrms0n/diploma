@@ -12,10 +12,14 @@ new webpack.DefinePlugin({
 })
 
 module.exports = {
-  entry: { main: './src/js/index.js' },    // точка входа
+  entry: { 
+    main: './src/js/index.js',
+    about: './src/js/about.js',
+    analysis: './src/js/analysis.js' 
+},                                           // точки входа
   output: {
-    path: path.resolve(__dirname, 'dist'),   // точка выхода
-    filename: '[name].[chunkhash].js'
+    path: path.resolve(__dirname, 'dist'),   // точки выхода
+    filename: 'js/[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -41,16 +45,27 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: [
-                (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-                    'css-loader', 
-                    'postcss-loader'
+        sideEffects: true,
+        use: [(isDev ? 'style-loader' : 
+                {   
+                    loader: MiniCssExtractPlugin.loader,
+                    options: { publicPath: '../' }
+                }),
+                
+                { 
+                    loader: 'css-loader', 
+                    options: { importLoaders: 2 }
+                },      
+                { 
+                    loader: 'postcss-loader',
+                    options: { publicPath: '../' },
+                }
             ]
       },
       {
         test: /\.css$/i,
         loader: 'postcss-loader',
-        options: {
+        options: {                              
             plugins: [
                     autoprefixer({
                         cascade: false
@@ -68,28 +83,25 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: false,
-      hash: true,
-      chunks: ['index'],
       template: './src/index.html',
+      chunks: ['main'],
       filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
         inject: false,
-        hash: true,
-        chunks: ['about'],
         template: './src/about.html',
+        chunks: ['about'],
         filename: 'about.html'
       }),
       new HtmlWebpackPlugin({
         inject: false,
-        hash: true,
-        chunks: ['analysis'],
         template: './src/analysis.html',
+        chunks: ['analysis'],
         filename: 'analysis.html'
       }),
     new WebpackMd5Hash(),
     new MiniCssExtractPlugin({
-        filename: 'style.[contenthash].css'
+        filename: 'styles/[name].[contenthash].css'
     }),
     new OptimizeCssAssetsPlugin({
         assetNameRegExp: /\.css$/g,

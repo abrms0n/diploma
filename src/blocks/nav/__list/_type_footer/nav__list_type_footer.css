@@ -1,0 +1,5 @@
+@media screen and (max-width: 767px) {
+    .nav__list.nav__list_type_footer {
+        flex-direction: column;
+    }    
+}

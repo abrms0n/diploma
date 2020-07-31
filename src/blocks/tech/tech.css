@@ -1,0 +1,23 @@
+@import url(./__title-box/tech__title-box.css);
+@import url(./__elem-box/tech__elem-box.css);
+
+.tech {
+    background: #f5f6f7;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    padding: 80px 104px 88px 104px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+@media screen and (max-width: 1024px) {
+    .tech {
+        padding: 40px;
+        grid-template-columns: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .tech {
+        padding: 32px 16px;
+    }
+}

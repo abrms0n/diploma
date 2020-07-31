@@ -1,0 +1,9 @@
+.table__date {
+    width: 104px;
+}
+
+@media screen and (max-width: 767px) {
+    .table__date {
+        width: 80px;
+    }
+}
