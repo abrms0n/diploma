@@ -8,3 +8,9 @@
         padding: 0;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .about-author__info {
+        padding: 24px 0 0 0;
+    }
+}

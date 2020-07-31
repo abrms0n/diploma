@@ -20,10 +20,15 @@ const mySwiper = new Swiper('.slider', {
         slidesOffsetBefore: 104
       },
 
-      600: {
+      768: {
         slidesPerView: 2,
         spaceBetween: 8,
         slidesOffsetBefore: 40
+      },
+
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 8,
       }
     },
     navigation: {

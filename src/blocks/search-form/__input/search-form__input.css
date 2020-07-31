@@ -23,7 +23,14 @@
     .search-form__input {
         height: 56px;
         border-radius: 28px;
-        box-shadow: 0 2px 2px rgba(0,0,0,.3);
         padding: 0 184px 0 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .search-form__input {
+        padding: 0 16px;
+        box-shadow: none;
+        margin: 0 0 16px 0;
     }
 }

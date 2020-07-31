@@ -1,4 +1,4 @@
-button.button_theme_white {
+.button.button_theme_white {
     margin: 0 auto;
     background: #fff;
     color: #1a1b22;
@@ -14,7 +14,14 @@ button.button_theme_white {
 }
 
 @media screen and (max-width: 1024px) {
-    button.button_theme_white {
+    .button.button_theme_white {
         width: 240px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .button.button_theme_white {
+        width: 100%;
+        max-width: 336px;
     }
 }

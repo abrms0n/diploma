@@ -1,3 +1,5 @@
+@import url(./_type_footer/nav__list_type_footer.css);
+
 .nav__list {
     list-style: none;
     display: flex;

@@ -7,3 +7,10 @@
         height: 242px;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .card.card_type_commit {
+        max-width: 288px;
+        height: 264px;
+    }
+}

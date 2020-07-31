@@ -1,4 +1,4 @@
-button.button_theme_blue {
+.button.button_theme_blue {
     width: 168px;
     background: #2f71e5;
     color: #fff;
@@ -16,7 +16,14 @@ button.button_theme_blue {
 }
 
 @media screen and (max-width: 1024px) {
-    button.button_theme_blue {
+    .button.button_theme_blue {
         width: 160px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .button.button_theme_blue {
+        width: 100%;
+        position: static;
     }
 }

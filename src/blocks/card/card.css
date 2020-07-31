@@ -19,6 +19,7 @@
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     position: relative;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 @media screen and (max-width: 1024px) {

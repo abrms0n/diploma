@@ -1,0 +1,7 @@
+.nav__list-item.nav__list-item_type_footer {
+    padding: 16px 0;
+}
+
+.nav__list-item.nav__list-item_type_footer:first-of-type {
+    padding: 0 0 16px 0;
+}

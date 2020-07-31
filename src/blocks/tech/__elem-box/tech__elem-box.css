@@ -11,3 +11,10 @@
         margin: 40px 0 0 0;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .tech__elem-box {
+        grid-gap: 32px;
+        grid-template-columns: repeat(2, 120px);
+    }   
+}

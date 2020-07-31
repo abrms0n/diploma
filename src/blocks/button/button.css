@@ -1,5 +1,6 @@
 @import url(./_theme_blue/button_theme_blue.css);
 @import url(./_theme_white/button_theme_white.css);
+@import url(./_theme_transparent/button_theme_transparent.css);
 
 .button {
     box-shadow: none;

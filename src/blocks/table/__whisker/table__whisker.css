@@ -10,3 +10,10 @@
     display: flex;
     align-items: center;
 }
+
+@media screen and (max-width: 767px) {
+    .table__whisker {
+        margin: 8px 0 0 0;
+        padding: 0 0 0 4px;
+    }
+}
