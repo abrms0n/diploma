@@ -1,0 +1,5 @@
+@media screen and (max-width: 1024px) {
+    .card__info.card__info_type_commit {
+        padding: 24px 16px 24px 24px;
+    }
+}

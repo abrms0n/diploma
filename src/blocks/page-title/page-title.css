@@ -1,9 +1,19 @@
 @import url(./_size_lg/page-title_size_lg.css);
 @import url(./_size_sm/page-title_size_sm.css);
+@import url(./_type_commit/page-title_type_commit.css);
+@import url(./_type_card/page-title_type_card.css);
 
 .page-title {
     font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 40px;
     line-height: 46px;
+}
+
+@media screen and (max-width: 1024px) {
+    .page-title {
+        font-size: 30px;
+        line-height: 34px;
+        margin: 0;
+    }
 }

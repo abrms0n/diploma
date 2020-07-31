@@ -16,3 +16,9 @@
     outline: none;
 }
 
+@media screen and (max-width: 1024px) {
+    .button {
+        height: 56px;
+        border-radius: 28px;
+    }
+}

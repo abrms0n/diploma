@@ -18,3 +18,12 @@
 .search-form__input::placeholder {
     color: #b6bcbf;
 }
+
+@media screen and (max-width: 1024px) {
+    .search-form__input {
+        height: 56px;
+        border-radius: 28px;
+        box-shadow: 0 2px 2px rgba(0,0,0,.3);
+        padding: 0 184px 0 24px;
+    }
+}

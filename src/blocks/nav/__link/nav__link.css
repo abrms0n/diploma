@@ -5,6 +5,7 @@
 .nav__link {
     color: #b6bcbf;
     font-size: 18px;
+    line-height: 24px;
     text-decoration: none;
     padding: 26px 0 23px 0;
     display: block;
@@ -17,4 +18,10 @@
 
 .nav__link:focus {
     outline: 1px dotted #ac0101;
+}
+
+@media screen and (max-width: 1024px) {
+    .nav__link {
+        padding: 22px 0 15px 0;
+    }
 }

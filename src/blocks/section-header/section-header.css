@@ -6,3 +6,9 @@
     align-items: flex-end;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
+
+@media screen and (max-width: 1024px) {
+    .section-header {
+        align-items: flex-start;
+    }
+}

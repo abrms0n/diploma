@@ -16,8 +16,13 @@
     text-decoration: none;
     max-width: 400px;
     border-radius: 10px;
-    box-shadow: 0 2px 2px rgba(0,0,0,.3);
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
     position: relative;
     overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+    .card {
+        max-width: 336px;
+    }
 }

@@ -1,3 +1,11 @@
+@import url(./_type_commit/card__info_type_commit.css);
+
 .card__info {
     padding: 20px 24px 54px 24px;
+}
+
+@media screen and (max-width: 1024px) {
+    .card__info {
+        padding: 16px 16px 48px 16px;
+    }
 }

@@ -4,3 +4,10 @@
     grid-gap: 40px;
     justify-content: center;
 }
+
+@media screen and (max-width: 1024px) {
+    .tech__elem-box {
+        grid-gap: 60px;
+        margin: 40px 0 0 0;
+    }
+}

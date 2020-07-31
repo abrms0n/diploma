@@ -4,3 +4,10 @@
     max-width: 545px;
     margin: 32px 0 64px 0;
 }
+
+
+@media screen and (max-width: 1024px) {
+    .search__subtitle {
+        margin: 16px 0 24px 0;
+    }
+}

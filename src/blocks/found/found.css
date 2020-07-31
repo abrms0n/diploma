@@ -6,3 +6,9 @@
     color: #1a1b22;
     padding: 80px 104px;
 }
+
+@media screen and (max-width: 1024px) {
+    .found {
+        padding: 40px 40px;
+    }
+}

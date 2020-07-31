@@ -23,3 +23,9 @@ div.swiper-button-next {
 span.swiper-pagination-bullet-active {
     background: #1a1b22;
 }
+
+@media screen and (max-width: 1024px) {
+    div.swiper-button-prev, div.swiper-button-next {
+        display: none;
+    }
+}

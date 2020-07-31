@@ -2,3 +2,9 @@
     padding: 80px 104px;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
+
+@media screen and (max-width: 1024px) {
+    .answer {
+        padding: 64px 40px 40px 40px;
+    }
+}

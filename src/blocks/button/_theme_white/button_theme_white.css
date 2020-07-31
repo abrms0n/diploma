@@ -12,3 +12,9 @@ button.button_theme_white {
 .button_theme_white:active {
     background: #b6b6b6;
 }
+
+@media screen and (max-width: 1024px) {
+    button.button_theme_white {
+        width: 240px;
+    }
+}

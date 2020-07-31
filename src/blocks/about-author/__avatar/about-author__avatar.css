@@ -5,3 +5,10 @@
     align-self: center;
     margin: 0 56px 0 0;
 }
+
+@media screen and (max-width: 1024px) {
+    .about-author__avatar {
+        max-width: 232px;
+        margin: 0 32px 0 0;
+    }
+}

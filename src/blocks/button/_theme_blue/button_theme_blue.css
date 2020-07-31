@@ -14,3 +14,9 @@ button.button_theme_blue {
 .button_theme_blue:active {
     background: #2a65cc;
 }
+
+@media screen and (max-width: 1024px) {
+    button.button_theme_blue {
+        width: 160px;
+    }
+}
