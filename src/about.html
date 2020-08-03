@@ -102,126 +102,26 @@
                     </a>
                 </div>
             </div>
+
+            <div class="preloader preloader_is-visible">
+                <i class="preloader__anim"></i>
+                <p class="preloader__message">
+                    Загрузка коммитов...
+                </p>
+            </div>
+
+            <section class="not-found" id="error">
+                <img src="<%=require('./images/error.svg').default%>" alt="не найдено" class="not-found__image">
+                <h2 class="not-found__title">
+                    Во время запроса произошла ошибка
+                </h2>
+                <p class="not-found__message">Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз.
+                </p>
+            </section>
             
-            <div class="slider swiper-container">
+            <div class="slider slider_is-hidden swiper-container">
     
-                <div class="swiper-wrapper">
-                    <a href="https://lenta.ru" target="_blank" class="card card_type_commit swiper-slide">
-                        <div class="card__info card__info_type_commit">
-                            <p class="card__date">
-                                14 августа, 2019
-                            </p>
-                            <div class="card__author">
-                                <img src="<%=require('./images/anton.jpg').default%>" alt="Антон Долинин" class="card__avatar">
-                                <div class="card__name-box">
-                                    <h3 class="page-title page-title_size_sm page-title_type_commit">
-                                        Антон Долинин
-                                    </h3>
-                                    <p class="card__email">
-                                        anton@yandex.ru
-                                    </p>
-                                </div>
-                            </div>
-                            <p class="card__intro">
-                                Emmet (formerly Zen Coding) is a web-
-    developer’s toolkit that can greatly improve your HTML & CSS workflow.
-                            </p>
-                        </div>
-                    </a>
-    
-                    <a href="https://lenta.ru" target="_blank" class="card card_type_commit swiper-slide">
-                        <div class="card__info card__info_type_commit">
-                            <p class="card__date">
-                                14 августа, 2019
-                            </p>
-                            <div class="card__author">
-                                <img src="<%=require('./images/maria.jpg').default%>" alt="Мария Фёдорова" class="card__avatar">
-                                <div class="card__name-box">
-                                    <h3 class="page-title page-title_size_sm page-title_type_commit">
-                                        Мария Фёдорова
-                                    </h3>
-                                    <p class="card__email">
-                                        mariiifed@yandex.ru
-                                    </p>
-                                </div>
-                            </div>
-    
-                            <p class="card__intro">
-                                You can install this plugin directly from NetBeans Plugin Portal: in NetBeans, open  <code>Tools > Plugins > Available plugins</code> and find and install Emmet plugin.
-                            </p>
-                        </div>
-                    </a>
-                    
-                    <a href="https://lenta.ru" target="_blank" class="card card_type_commit swiper-slide">
-                        <div class="card__info card__info_type_commit">
-                            <p class="card__date">
-                                14 августа, 2019
-                            </p>
-                            <div class="card__author">
-                                <img src="<%=require('./images/inga.jpg').default%>" alt="Мария Фёдорова" class="card__avatar">
-                                <div class="card__name-box">
-                                    <h3 class="page-title page-title_size_sm page-title_type_commit">
-                                        Инга Иванова
-                                    </h3>
-                                    <p class="card__email">
-                                        ingaiva@yandex.ru
-                                    </p>
-                                </div>
-                            </div>
-                            <p class="card__intro">
-                                With Emmet, you can type CSS-like expressions 
-                        that can be dynamically parsed, and produce 
-                        output depending on what you type in the abbreviature and some more text Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos rerum, asperiores fugit odio numquam dolorem.
-                            </p>
-                        </div>
-                    </a>
-    
-                    <a href="https://lenta.ru" target="_blank" class="card card_type_commit swiper-slide">
-                        <div class="card__info card__info_type_commit">
-                            <p class="card__date">
-                                14 августа, 2019
-                            </p>
-                            <div class="card__author">
-                                <img src="<%=require('./images/dekart.jpg').default%>" alt="Мария Фёдорова" class="card__avatar">
-                                <div class="card__name-box">
-                                    <h3 class="page-title page-title_size_sm page-title_type_commit">
-                                        Рене Декарт
-                                    </h3>
-                                    <p class="card__email">
-                                        xyz@yandex.ru
-                                    </p>
-                                </div>
-                            </div>
-    
-                            <p class="card__intro">
-                                Я мыслю, следовательно, существую.
-                            </p>
-                        </div>
-                    </a>
-    
-                    <a href="https://lenta.ru" target="_blank" class="card card_type_commit swiper-slide">
-                        <div class="card__info card__info_type_commit">
-                            <p class="card__date">
-                                14 августа, 2019
-                            </p>
-                            <div class="card__author">
-                                <img src="<%=require('./images/avatar.jpg').default%>" alt="Мария Фёдорова" class="card__avatar">
-                                <div class="card__name-box">
-                                    <h3 class="page-title page-title_size_sm page-title_type_commit">
-                                        Евгений А.
-                                    </h3>
-                                    <p class="card__email">
-                                        the-kvakz@yandex.ru
-                                    </p>
-                                </div>
-                            </div>
-    
-                            <p class="card__intro">
-                                Работа в IT это правильный выбор для меня.
-                            </p>
-                        </div>
-                    </a>
-                </div>
+                <div class="swiper-wrapper"></div>
     
                 <div class="slider__dots swiper-pagination"></div>
     
