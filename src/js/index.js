@@ -42,10 +42,6 @@ const isDev = process.env.NODE_ENV === 'development';
     function showResults() {
         cardsBox.classList.remove('found_is-hidden');
     }
-
-   
-    
-    
     
     function renderLoading(isLoading) {
         if (isLoading) {
@@ -62,7 +58,6 @@ const isDev = process.env.NODE_ENV === 'development';
         errorBox.classList.add('not-found_is-visible');
     }
     
-
     function renderNewsCards() {
         renderLoading(true);
         api.getNews()
@@ -73,6 +68,7 @@ const isDev = process.env.NODE_ENV === 'development';
                 item.create();
                 return item
             });
+            showResults();
             newsCardList.render(news);
         })
         .catch((err) => {
@@ -82,7 +78,7 @@ const isDev = process.env.NODE_ENV === 'development';
         .finally(() => renderLoading(false))
     }
     
-    renderNewsCards();
+    // renderNewsCards();
     
   
   
