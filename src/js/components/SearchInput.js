@@ -1,6 +1,6 @@
-export class FormValidator {
-  constructor(form) {
-    this.form = form;
+export class SearchInput {
+  constructor(callback) {
+    this.callback = callback;
   }
 
   checkInputValidity = (input) => {

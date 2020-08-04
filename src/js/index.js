@@ -4,82 +4,68 @@ import "../../node_modules/normalize.css/normalize.css"
 import {NewsApi} from './modules/NewsApi.js';
 import {NewsCard} from './components/NewsCard.js';
 import {NewsCardList} from './components/NewsCardList.js';
+import {PAGE_SIZE_NEWS_API, NEWS_URL_DEV, NEWS_URL, NEWS_API_TOKEN, ERROR_BOX, CARDS_BOX, NEWS_LIST, TODAY, SEARCH_FORM, SEARCH_INPUT} from './constants/constants.js';
+import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils.js'
+import { SearchInput } from './components/SearchInput';
 
 const isDev = process.env.NODE_ENV === 'development';
 
-(function app() {
+(function indexApp() {
 
-    const preloader = document.querySelector('.preloader');
-    const cardsBox = document.querySelector('.found');
-    const cardsList = document.querySelector('.found__cards');
-    const errorBox = document.getElementById('error');
-    const newsCardList = new NewsCardList(cardsList);
-
-    const now = new Date();
-    const today = [now.getFullYear(),now.getMonth()+1,now.getDate()].join('-');
-
-    function getLastWeek(date) {
-        date = date.split('-');
-        date = new Date(date[0], date[1], date[2], -168, 0, 0, 0);
-        date = [date.getFullYear(),date.getMonth(),date.getDate()];
-        date = date.join('-');
-        return date
-    }
-    
-    const sevenDaysAgo = getLastWeek(today);
-
-    const api = new NewsApi({
-        baseUrl: (isDev ? 'http://newsapi.org' : 'https://newsapi.org'),
+    const NEWS_CARD_LIST = new NewsCardList(NEWS_LIST);
+    const WEEK_AGO = getLastWeek(TODAY);
+    const API = new NewsApi({
+        baseUrl: (isDev ? NEWS_URL_DEV : NEWS_URL),
         headers: {
-            apiKey: '506809f93d0443f99a89364270056a79',
-            from: sevenDaysAgo,
-            to: today,
-            pageSize : 100,
-            'Content-Type': 'application/json'
+            Authorization: NEWS_API_TOKEN
         }
     });
 
-    function showResults() {
-        cardsBox.classList.remove('found_is-hidden');
-    }
-    
-    function renderLoading(isLoading) {
-        if (isLoading) {
-        cardsBox.classList.add('found_is-hidden');
-        preloader.classList.add('preloader_is-visible')
-        } else {
-        cardsBox.classList.add('found_is-hidden');
-        preloader.classList.remove('preloader_is-visible')
-        }
-    }
-
-    function renderError() { 
-        cardsBox.classList.add('found_is-hidden');
-        errorBox.classList.add('not-found_is-visible');
-    }
-    
-    function renderNewsCards() {
-        renderLoading(true);
-        api.getNews()
+    function saveNewsToLocalStorage() {
+        renderLoading(true, CARDS_BOX, ERROR_BOX);
+        API.getNews()
         .then((data) => {
-        const bit = data.slice(0, 100);     
-            const news = bit.map(item => {                        
-                item = new NewsCard(item.title, rusifyDate(item.publishedAt), item.link, item.urlToImage, item.description, item.source.name, newsCardsList);
-                item.create();
-                return item
-            });
-            showResults();
-            newsCardList.render(news);
+            const bit = data.articles.slice(0, 100);
+            localStorage.news = JSON.stringify(bit);
         })
         .catch((err) => {
-        console.log(`Ошибочка вышла: ${err}`);
-        renderError();
+            console.log(`Error is: ${err}`);
+            renderError(CARDS_BOX, ERROR_BOX);
         })
-        .finally(() => renderLoading(false))
+        .finally(() => renderLoading(false, CARDS_BOX, ERROR_BOX))
+    }
+
+
+    function renderNewsCards() {
+        const news = JSON.parse(localStorage.news).map(item => {                        
+            item = new NewsCard(item.title, rusifyDate(item.publishedAt), item.url, item.urlToImage, item.description, item.source.name, NEWS_CARD_LIST);
+            item.create();
+            return item
+        });
+        
+        NEWS_CARD_LIST.render(news);
     }
     
-    // renderNewsCards();
+
+    // const SEARCH_INPUT = new SearchInput(callBack);    // колбэк ф-я, исполняемая при сабмите формы поиска. В ней описывается взаимодействие с API, списком картчек и локальным хранилищем.
+
+
+    function submit() {
+        NEWS_CARD_LIST.innerHTML = '';
+        localStorage.clear();
+        SEARCH_FORM.addEventListener('submit', function(event) {
+            event.preventDefault();
+            API.options.baseUrl = `${NEWS_URL}/v2/everything?apiKey=${NEWS_API_TOKEN}&q='${SEARCH_INPUT.value}'&from=${WEEK_AGO}&to=${TODAY}`;
+            saveNewsToLocalStorage();
+            renderNewsCards();
+        });
+    }
+
+    submit();
+
+
     
-  
-  
+
+
+    
 }());

@@ -7,6 +7,8 @@ import 'swiper/swiper-bundle.css';
 import {CommitCard} from '../components/CommitCard.js';
 import {CommitCardList} from '../components/CommitCardList.js';
 import {GitHubApi} from '../modules/GitHubApi.js';
+import {GITHUB_URL_DEV, GITHUB_URL, COMMITS_LIST, SLIDER, PRELOADER, ERROR_BOX} from '../constants/constants.js';
+import {rusifyDate, renderLoading, renderCommitError} from '../utils/utils.js'
 
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -47,57 +49,29 @@ const isDev = process.env.NODE_ENV === 'development';
 
 
   const api = new GitHubApi({
-    baseUrl: (isDev ? 'http://api.github.com' : 'https://api.github.com')
+    baseUrl: (isDev ? GITHUB_URL_DEV : GITHUB_URL)
   });
 
-  const commitsList = document.querySelector('.swiper-wrapper');
-  const commitCardList = new CommitCardList(commitsList);
-  const slider = document.querySelector('.slider');
-  const preloader = document.querySelector('.preloader');
-  const errorBox = document.getElementById('error');
-
-  function rusifyDate(date) {
-    const months = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря']
-    let rusDate = date.split('T');
-    rusDate = rusDate[0];
-    rusDate = rusDate.split('-');
-    rusDate = `${rusDate[2]} ${months[rusDate[1]-1]}, ${rusDate[0]}`;
-    return rusDate;
-  }
-
-
-  function renderCommitsLoading(isLoading) {
-    if (isLoading) {
-      slider.classList.add('slider_is-hidden');
-      preloader.classList.add('preloader_is-visible')
-      } else {
-      slider.classList.remove('slider_is-hidden');
-      preloader.classList.remove('preloader_is-visible')
-      }
-  }
-
-  function renderCommitError() { 
-    slider.classList.add('slider_is-hidden');
-    errorBox.classList.add('not-found_is-visible');
-  }
+  const COMMIT_CARD_LIST = new CommitCardList(COMMITS_LIST);
 
   function renderCommitCards() {
-    renderCommitsLoading(true);
+    renderLoading(true, SLIDER, PRELOADER);
     api.getCommits()
     .then((data) => {
+      console.log(data);
     const bit = data.slice(0, 50); 
         const commits = bit.map(item => {                        
-            item = new CommitCard(item.commit.committer.name, rusifyDate(item.commit.committer.date), item.html_url, item.author.avatar_url, item.commit.committer.email, item.commit.message, commitsList);
+            item = new CommitCard(item.commit.committer.name, rusifyDate(item.commit.committer.date), item.html_url, item.author.avatar_url, item.commit.committer.email, item.commit.message, COMMITS_LIST);
             item.create();
             return item
         });
-        commitCardList.render(commits);
+        COMMIT_CARD_LIST.render(commits);
     })
     .catch((err) => {
-    console.log(`Ошибочка вышла: ${err}`);
-    renderCommitError();
+      console.log(`Error is: ${err}`);
+      renderError(SLIDER, ERROR_BOX);
     })
-    .finally(() => renderCommitsLoading(false))
+    .finally(() => renderLoading(false, SLIDER, PRELOADER))
   }
   
   renderCommitCards();

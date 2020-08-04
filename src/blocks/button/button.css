@@ -17,6 +17,11 @@
     outline: none;
 }
 
+.button:disabled {
+    background: #bbb;
+    color: #fff;
+}
+
 @media screen and (max-width: 1024px) {
     .button {
         height: 56px;

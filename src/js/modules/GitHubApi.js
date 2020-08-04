@@ -9,7 +9,7 @@ export class GitHubApi {
         })
         .then(res => {
          if (!res.ok) {
-             return Promise.reject(`Ошибочка вышла: ${res.status}`);
+             return Promise.reject(`Error is: ${res.status}`);
          } else {
              return res.json()
          }
