@@ -1,15 +1,17 @@
-export class NewsCardList {
+  export class NewsCardList {
     constructor(container) {
       this.container = container;
       this.cards = [];
     }
     render = (array) => {
       array.forEach((card) => {
-        this.container.append(card.cardElement)   // здесь будет метод для отрисовки по три
+        this.container.append(card.cardElement)
       })
     }
 
-    // addCard(card) {
-    //   this.container.appendChild(card.create());
-    // }
+    getHiddenCards = (count = 3 ) => {
+      const arr = this.cards.slice(0, count);
+      this.cards = this.cards.slice(count);
+      return arr;
   }
+}

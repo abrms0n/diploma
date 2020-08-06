@@ -23,70 +23,61 @@ import { SearchInput } from './components/SearchInput';
         from: TODAY,
         to: WEEK_AGO,
         language: 'ru',
-        sortBy: 'publishedAt'
+        sortBy: 'popularity'
     }
 
     const API = new NewsApi(NEWS_OPTIONS);
 
     function saveNewsToLocalStorage() {
         renderLoading(true, CARDS_BOX, PRELOADER);
+        SHOW_MORE.setAttribute('style', 'display: block');
+        NEWS_CARD_LIST.cards = [];
         localStorage.clear();
-        NEWS_LIST.innerHTML = '';
+        NEWS_LIST.textContent = '';
         API.getNews()
         .then((data) => {
-            if (data.articles.length === 0) {
-                renderError(CARDS_BOX, NOT_FOUND);
-            } else {
-                const bit = data.articles.slice(0, 100);
-                localStorage.news = JSON.stringify(bit);
-                localStorage.query = SEARCH_INPUT.value;
-            }
+            const bit = data.articles.slice(0, 100);
+            localStorage.news = JSON.stringify(bit);
+            localStorage.query = SEARCH_INPUT.value;
         })
         .catch((err) => {
             console.log(`Error is: ${err}`);
-            renderError(CARDS_BOX, ERROR_BOX);
+            renderError(true, CARDS_BOX, ERROR_BOX);
         })
         .finally(() => renderLoading(false, CARDS_BOX, PRELOADER))
     }
 
-    function makeSubArr(arr) {
-        let start = 0;
-        let subArr = arr.slice(start, start+3)
-        start += 3;
-        localStorage.start = start;
-        return subArr
-    }
 
-    function renderSlice(arr, container) {
-        let subArr = makeSubArr(arr);
-        container.render(subArr); 
-    }
+
 
     function renderNewsCards() {
-        const news = JSON.parse(localStorage.news).map(item => {                        
-            item = new NewsCard(item.title, rusifyDate(item.publishedAt), item.url, item.urlToImage, item.description, item.source.name, NEWS_CARD_LIST); 
-            
-            NEWS_CARD_LIST.cards.push(item);
-            item.create();
-            return item
-        });
-        console.log(NEWS_CARD_LIST.cards);
-        CARDS_BOX.classList.remove(`${CARDS_BOX.classList[0]}_is-hidden`); 
+        const parsed = JSON.parse(localStorage.news);
+        if (parsed.length === 0) {
+            renderError(true, CARDS_BOX, NOT_FOUND);
+        } else {
+            renderError(false, CARDS_BOX, NOT_FOUND);
+            const news = parsed.map(item => {                        
+                item = new NewsCard(item.title, rusifyDate(item.publishedAt), item.url, item.urlToImage, item.description, item.source.name, NEWS_CARD_LIST); 
+                item.create();
+                NEWS_CARD_LIST.cards.push(item);
+                return item
+            });
 
-        NEWS_CARD_LIST.render(news);  // отрисовать все карточки
-        // renderSlice(news, NEWS_CARD_LIST)  // отрисовать три карточки
+            CARDS_BOX.classList.remove(`${CARDS_BOX.classList[0]}_is-hidden`); 
+            NEWS_CARD_LIST.render(NEWS_CARD_LIST.getHiddenCards());
+            if (NEWS_CARD_LIST.cards.length < 1) {
+                SHOW_MORE.setAttribute('style', 'display: none');
+            }
+        } 
+        
     }
 
-    // нужно создать объект, в который будут записываться объекты карточек
-    
-    // и создать метод add(), 
-
-
-
-
-    
-
-    // SHOW_MORE.addEventListener('click', renderSlice(NEWS_CARD_LIST, NEWS_CARD_LIST)); // действие по кнопке
+    SHOW_MORE.addEventListener('click', () => {
+        NEWS_CARD_LIST.render(NEWS_CARD_LIST.getHiddenCards());
+        if (NEWS_CARD_LIST.cards.length === 0) {
+            SHOW_MORE.setAttribute('style', 'display: none');
+        }
+    })
 
     
 
@@ -94,23 +85,22 @@ import { SearchInput } from './components/SearchInput';
     // const SEARCH_INPUT = new SearchInput(callBack);    // колбэк ф-я, исполняемая при сабмите формы поиска. В ней описывается взаимодействие с API, списком картчек и локальным хранилищем.
 
 
-    function submit() {
-        SEARCH_FORM.addEventListener('submit', function(event) {
-            event.preventDefault();
-            API.options.q = SEARCH_INPUT.value;
-            saveNewsToLocalStorage();
-            setTimeout(() => {
-                renderNewsCards();
-            }, 1000);
-        });
-    }
 
-    submit();
+    SEARCH_FORM.addEventListener('submit', function(event) {
+        event.preventDefault();
+        API.options.q = SEARCH_INPUT.value;
+        saveNewsToLocalStorage();
+        setTimeout(() => {
+            renderNewsCards();
+        }, 700);
+    });
+
 
     if (localStorage.query) {
         SEARCH_INPUT.value = localStorage.query;
         renderNewsCards();
     }
+
 
 
     
