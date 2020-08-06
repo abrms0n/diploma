@@ -15,8 +15,7 @@ export const NEWS_LIST = document.querySelector('.found__cards');
 export const SHOW_MORE = document.querySelector('#showMore')
 export const MAIN = document.querySelector('.main');
 export const NOW = new Date();
-export const TODAY = [NOW.getFullYear(),NOW.getMonth()+1,NOW.getDate()].join('-');  
-// может быть переделать в toISOString
+export const TODAY = [NOW.getFullYear(),NOW.getMonth()+1,NOW.getDate()].join('-');
 export const SEARCH_FORM = document.querySelector('.search-form');
 export const SEARCH_INPUT = document.querySelector('.search-form__input');
 export const ASKED = document.querySelector('#asked');

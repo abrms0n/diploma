@@ -32,7 +32,7 @@ import {renderWeekDay, calcPercents} from '../utils/utils.js';
     days[5] = new Date(NOW.getFullYear(), NOW.getMonth(), NOW.getDate()+(-6))
 
 
-    console.log(calcPercents(NOW))
+
     // привести в порядок
 
 
@@ -46,10 +46,10 @@ import {renderWeekDay, calcPercents} from '../utils/utils.js';
 
 
 
-    function renderPercents(args) {
+    function renderPercents(days) {
         WHISKERS.forEach((item, index) => {
-            item.setAttribute('style', `width: ${args[index]}%`);
-            item.textContent = args[index];
+            item.setAttribute('style', `width: ${days[index]}%`);
+            item.textContent = days[index];
         })
     };
 
@@ -64,7 +64,8 @@ import {renderWeekDay, calcPercents} from '../utils/utils.js';
 
     // привести в порядок!
 
-    renderPercents([calcPercents(days[5]),calcPercents(days[4]),calcPercents(days[3]),calcPercents(days[2]),calcPercents(days[1]),calcPercents(days[0]),calcPercents(NOW)]);
+    renderPercents([calcPercents(days[0]),calcPercents(days[1]),calcPercents(days[2]),calcPercents(days[3]),calcPercents(days[4]),calcPercents(days[5]),calcPercents(NOW)]);
+
 
     renderQuery();
     renderQuantity();

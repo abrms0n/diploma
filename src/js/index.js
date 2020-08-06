@@ -4,7 +4,7 @@ import "../../node_modules/normalize.css/normalize.css"
 import {NewsApi} from './modules/NewsApi.js';
 import {NewsCard} from './components/NewsCard.js';
 import {NewsCardList} from './components/NewsCardList.js';
-import {ERROR_BOX, NOT_FOUND, PRELOADER, CARDS_BOX, NEWS_LIST, TODAY, SEARCH_FORM, SEARCH_INPUT, NEWS_API_TOKEN, NEWS_URL_DEV, NEWS_URL, PAGE_SIZE_NEWS_API, IS_DEV, SHOW_MORE} from './constants/constants.js';
+import {ERROR_BOX, NOW, NOT_FOUND, PRELOADER, CARDS_BOX, NEWS_LIST, TODAY, SEARCH_FORM, SEARCH_INPUT, NEWS_API_TOKEN, NEWS_URL_DEV, NEWS_URL, PAGE_SIZE_NEWS_API, IS_DEV, SHOW_MORE} from './constants/constants.js';
 import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils.js'
 import { SearchInput } from './components/SearchInput';
 
@@ -15,6 +15,7 @@ import { SearchInput } from './components/SearchInput';
     const NEWS_CARD_LIST = new NewsCardList(NEWS_LIST);
     const WEEK_AGO = getLastWeek(TODAY);
     const URL = (IS_DEV ? NEWS_URL_DEV : NEWS_URL);
+
 
     const NEWS_OPTIONS = {
         baseUrl: `${URL}/v2/everything`,
@@ -92,8 +93,8 @@ import { SearchInput } from './components/SearchInput';
         saveNewsToLocalStorage();
         setTimeout(() => {
             renderNewsCards();
-        }, 700);
-    });
+        }, 1500);
+    });  // исправить вот это, не должно быть отсрочек - просто одно за другим
 
 
     if (localStorage.query) {

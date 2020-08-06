@@ -34,7 +34,7 @@ export function renderLoading(isLoading, elem, preloader) {
 
 export function getLastWeek(date) {
     date = date.split('-');
-    date = new Date(date[0], date[1], date[2]-1);
+    date = new Date(date[0], date[1], date[2]-7);
     date = [date.getFullYear(),date.getMonth(),date.getDate()];
     date = date.join('-');
     return date
