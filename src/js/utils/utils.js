@@ -16,6 +16,7 @@ export function renderError(elem, error) {
     error.classList.add('not-found_is-visible');
 }
 
+
 export function renderLoading(isLoading, elem, preloader) {
     if (isLoading) {
         elem.classList.add(`${elem.classList[0]}_is-hidden`);
@@ -28,8 +29,13 @@ export function renderLoading(isLoading, elem, preloader) {
 
 export function getLastWeek(date) {
     date = date.split('-');
-    date = new Date(date[0], date[1], date[2], -168, 0, 0, 0);
+    date = new Date(date[0], date[1], date[2]-1);
     date = [date.getFullYear(),date.getMonth(),date.getDate()];
     date = date.join('-');
     return date
 }
+
+// export function getWeekDay(date) {
+//     let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+//     return days[date.getDay()];
+// }
