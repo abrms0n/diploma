@@ -1,6 +1,7 @@
 export class Statistics {
-    constructor(days, news) {
+    constructor(days, query, news) {
         this.days = days;
+        this.query = query.toLowerCase();
         this.news = news;
     }
 
@@ -10,18 +11,26 @@ export class Statistics {
         return date;
     }
     
-    calcPercents = () => {
+    calcMentions = () => {
         const isoDays = this.days.map(item => {
             return item = this.toIsoDate(item);
         })
-        const dates = this.news.map(item => {
-            return item = item.publishedAt;
-        })
+
         const resultsArr = isoDays.map(day => {
-            const results = dates.filter(date => {
-                return date.includes(day)
+            let titleCounter = 0;
+            let descriptionCounter = 0;
+
+            this.news.filter(newsItem => {
+               if (newsItem.title.toLowerCase().includes(this.query) && newsItem.publishedAt.includes(day)) {
+                   titleCounter++;
+               }
             })
-            return results.length;
+            this.news.filter(newsItem => {
+               if (newsItem.description.toLowerCase().includes(this.query) && newsItem.publishedAt.includes(day)) {
+                   descriptionCounter++;
+               }
+            })
+            return titleCounter + descriptionCounter;
         })
         return resultsArr;
     }

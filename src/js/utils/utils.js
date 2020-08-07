@@ -21,7 +21,6 @@ export function renderError(isError, elem, error) {
     }
 }
 
-
 export function renderLoading(isLoading, elem, preloader) {
     if (isLoading) {
         elem.classList.add(`${elem.classList[0]}_is-hidden`);
@@ -34,7 +33,7 @@ export function renderLoading(isLoading, elem, preloader) {
 
 export function getLastWeek(date) {
     date = date.split('-');
-    date = new Date(date[0], date[1], date[2]-7);
+    date = new Date(date[0], date[1], date[2]-6);
     date = [date.getFullYear(),date.getMonth(),date.getDate()];
     date = date.join('-');
     return date
@@ -44,12 +43,11 @@ export function renderWeekDay(date) {
     return `${date.toLocaleString('ru', {day: 'numeric'})}, ${date.toLocaleString('ru', {weekday: 'short'})}`
 }
 
-
 export function renderQuery(askedElem, query) {
     askedElem.textContent = `Вы спросили «${query}»`
 }
 
-export function renderPercents(days, elements) {
+export function renderMentions(days, elements) {
     elements.forEach((item, index) => {
         item.setAttribute('style', `width: ${days[index]}%`);
         item.textContent = days[index];
@@ -65,11 +63,11 @@ export function renderDays(monthElem, daysElems, nowDate) {
     })
 }
 
-export function renderQuantity(news, queryStr, weekElem, titlesElem) {
+export function renderQuantity(news, queryStr, total, weekElem, titlesElem) {
     const results = news.filter(item => {
         return item.title.toLowerCase().includes(queryStr)
     }) 
-    const str = news.length.toString();
+    const str = total;
     weekElem.textContent = str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     titlesElem.textContent = results.length;
 }

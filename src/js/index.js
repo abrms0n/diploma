@@ -4,7 +4,7 @@ import "../../node_modules/normalize.css/normalize.css"
 import {NewsApi} from './modules/NewsApi.js';
 import {NewsCard} from './components/NewsCard.js';
 import {NewsCardList} from './components/NewsCardList.js';
-import {ERROR_BOX, NOW, NOT_FOUND, PRELOADER, CARDS_BOX, NEWS_LIST, TODAY, SEARCH_FORM, SEARCH_INPUT, NEWS_API_TOKEN, NEWS_URL_DEV, NEWS_URL, PAGE_SIZE_NEWS_API, IS_DEV, SHOW_MORE} from './constants/constants.js';
+import {ERROR_BOX, NOT_FOUND, PRELOADER, CARDS_BOX, NEWS_LIST, TODAY, SEARCH_FORM, SEARCH_INPUT, NEWS_API_TOKEN, NEWS_URL_DEV, NEWS_URL, PAGE_SIZE_NEWS_API, IS_DEV, SHOW_MORE} from './constants/constants.js';
 import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils.js'
 import { SearchInput } from './components/SearchInput';
 
@@ -40,6 +40,7 @@ import { SearchInput } from './components/SearchInput';
             const bit = data.articles.slice(0, 100);
             localStorage.news = JSON.stringify(bit);
             localStorage.query = SEARCH_INPUT.value;
+            localStorage.total = data.totalResults;
         })
         .catch((err) => {
             console.log(`Error is: ${err}`);
