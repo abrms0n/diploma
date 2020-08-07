@@ -50,16 +50,48 @@ export function toIsoDate(date) {
     return date;
 }
 
-export function calcPercents(date) {
-    const news = JSON.parse(localStorage.news);
-    const isoDate = toIsoDate(date);
-    
+export function calcPercents(days, news) {
+    const isoDays = days.map(item => {
+        return item = toIsoDate(item);
+    })
     const dates = news.map(item => {
         return item = item.publishedAt;
     })
-
-    const results = dates.filter(item => {
-        return item.includes(isoDate)
+    const resultsArr = isoDays.map(day => {
+        const results = dates.filter(date => {
+            return date.includes(day)
+        })
+        return results.length;
     })
-    return results.length;
+    return resultsArr;
+}
+
+
+export function renderQuery(askedElem) {
+    askedElem.textContent = `Вы спросили «${localStorage.query}»`
+}
+
+export function renderPercents(days, elements) {
+    elements.forEach((item, index) => {
+        item.setAttribute('style', `width: ${days[index]}%`);
+        item.textContent = days[index];
+    })
+};
+
+export function renderDays(monthElem, daysElems, nowDate) {
+    let today = new Date();
+    today = today.toLocaleString('ru', {month: 'long'});
+    monthElem.textContent = `дата (${today})`
+    daysElems.forEach((item, index) => {
+        item.textContent = renderWeekDay(new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate()+(index-6)))
+    })
+}
+
+export function renderQuantity(news, queryStr, weekElem, titlesElem) {
+    const results = news.filter(item => {
+        return item.title.toLowerCase().includes(queryStr)
+    }) 
+    const str = news.length.toString();
+    weekElem.textContent = str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
+    titlesElem.textContent = results.length;
 }

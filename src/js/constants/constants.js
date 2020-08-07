@@ -24,4 +24,6 @@ export const TITLES = document.querySelector('#titles');
 export const WHISKERS = document.querySelectorAll('.table__whisker');
 export const MONTH = document.querySelector('#month');
 export const DAYS = document.querySelectorAll('.day');
+export const NEWS = JSON.parse(localStorage.news);
+export const QUERY = localStorage.query.toLowerCase();
 
