@@ -44,31 +44,9 @@ export function renderWeekDay(date) {
     return `${date.toLocaleString('ru', {day: 'numeric'})}, ${date.toLocaleString('ru', {weekday: 'short'})}`
 }
 
-export function toIsoDate(date) {
-    date = date.toISOString();
-    date = date.split('T')[0];
-    return date;
-}
 
-export function calcPercents(days, news) {
-    const isoDays = days.map(item => {
-        return item = toIsoDate(item);
-    })
-    const dates = news.map(item => {
-        return item = item.publishedAt;
-    })
-    const resultsArr = isoDays.map(day => {
-        const results = dates.filter(date => {
-            return date.includes(day)
-        })
-        return results.length;
-    })
-    return resultsArr;
-}
-
-
-export function renderQuery(askedElem) {
-    askedElem.textContent = `Вы спросили «${localStorage.query}»`
+export function renderQuery(askedElem, query) {
+    askedElem.textContent = `Вы спросили «${query}»`
 }
 
 export function renderPercents(days, elements) {
