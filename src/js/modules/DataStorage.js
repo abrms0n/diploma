@@ -1,5 +1,7 @@
 export class DataStorage {
-    constructor() {
-        
+    constructor(storage) {
+        this.storage = storage;
     }
+
+    
 }

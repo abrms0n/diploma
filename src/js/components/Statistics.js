@@ -15,7 +15,6 @@ export class Statistics {
         const isoDays = this.days.map(item => {
             return item = this.toIsoDate(item);
         })
-
         const resultsArr = isoDays.map(day => {
             let titleCounter = 0;
             let descriptionCounter = 0;

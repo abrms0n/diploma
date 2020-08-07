@@ -13,5 +13,6 @@
       const arr = this.cards.slice(0, count);
       this.cards = this.cards.slice(count);
       return arr;
-  }
+    }
+
 }

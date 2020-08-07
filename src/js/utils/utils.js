@@ -16,7 +16,6 @@ export function renderError(isError, elem, error) {
         elem.classList.add(`${elem.classList[0]}_is-hidden`);
         error.classList.add('not-found_is-visible');
     } else {
-        elem.classList.remove(`${elem.classList[0]}_is-hidden`);
         error.classList.remove('not-found_is-visible');
     }
 }
@@ -26,7 +25,6 @@ export function renderLoading(isLoading, elem, preloader) {
         elem.classList.add(`${elem.classList[0]}_is-hidden`);
         preloader.classList.add('preloader_is-visible')
     } else {
-        elem.classList.remove(`${elem.classList[0]}_is-hidden`);
         preloader.classList.remove('preloader_is-visible')
     }
 }
@@ -70,4 +68,10 @@ export function renderQuantity(news, queryStr, total, weekElem, titlesElem) {
     const str = total;
     weekElem.textContent = str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     titlesElem.textContent = results.length;
+}
+
+export function checkStorage() {
+    if (localStorage.query) {
+        return true;
+    }
 }

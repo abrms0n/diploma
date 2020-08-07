@@ -27,7 +27,8 @@ const isDev = process.env.NODE_ENV === 'development';
       1024: {
         slidesPerView: 3,
         spaceBetween: 16,
-        slidesOffsetBefore: 104
+        slidesOffsetBefore: 104,
+        initialSlide: 2
       },
 
       768: {
@@ -58,7 +59,6 @@ const isDev = process.env.NODE_ENV === 'development';
     renderLoading(true, SLIDER, PRELOADER);
     api.getCommits()
     .then((data) => {
-      console.log(data);
     const bit = data.slice(0, 50); 
         const commits = bit.map(item => {                        
             item = new CommitCard(item.commit.committer.name, rusifyDate(item.commit.committer.date), item.html_url, item.author.avatar_url, item.commit.committer.email, item.commit.message, COMMITS_LIST);
@@ -66,6 +66,7 @@ const isDev = process.env.NODE_ENV === 'development';
             return item
         });
         COMMIT_CARD_LIST.render(commits);
+
     })
     .catch((err) => {
       console.log(`Error is: ${err}`);
