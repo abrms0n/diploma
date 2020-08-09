@@ -4,9 +4,8 @@ export class SearchInput {
     this.form = form;
   }
 
-  setEventListeners = () => {
+  _setEventListeners = () => {
     this.form.addEventListener('submit', this.callback); 
   }
-  
 }
 
