@@ -27,17 +27,6 @@ import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils
     const api = new NewsApi(newsOptions);
     const storage = new DataStorage(localStorage);
 
-    function showStubs() {
-        let images = document.querySelectorAll('.card__pic');
-        console.log(images)
-        images.forEach((image) => {
-            image.onerror = () => {
-                console.log(image);
-                image.setAttribute('src', 'images/noimage.jpg');
-            }
-        }) 
-    }
-
     function renderNewsCards() {
         const parsed = storage.parse();
         if (parsed.length === 0) {
@@ -52,7 +41,7 @@ import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils
             });
             CARDS_BOX.classList.remove(`${CARDS_BOX.classList[0]}_is-hidden`);
             newsCardList.render(newsCardList.getHiddenCards());
-            // showStubs();
+            showStubs();
             if (newsCardList.cards.length < 1) {
                 SHOW_MORE.setAttribute('style', 'display: none');
             }
@@ -73,7 +62,6 @@ import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils
             localStorage.news = JSON.stringify(bit);
             localStorage.query = SEARCH_INPUT.value;
             localStorage.total = data.totalResults;
-            // newsCardList.removeNulls();
             renderNewsCards();
         })
         .catch((err) => {
@@ -84,7 +72,6 @@ import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils
     }
 
     SHOW_MORE.addEventListener('click', () => {
-        // showStubs();
         newsCardList.render(newsCardList.getHiddenCards());
         if (newsCardList.cards.length === 0) {
             SHOW_MORE.setAttribute('style', 'display: none');
