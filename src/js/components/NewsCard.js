@@ -21,7 +21,7 @@ export class NewsCard {
       cardPic.classList.add('card__pic');
       cardPic.setAttribute('src', this.imageLink);
       if (this.imageLink === null) {
-        cardPic.setAttribute('src', '../images/noimage.jpg')
+        cardPic.setAttribute('src', './images/noimage.jpg')
       }
       cardPic.setAttribute('alt', this.title)
 
