@@ -1,11 +1,11 @@
   export class NewsCardList {
     constructor(container) {
-      this.container = container;
+      this._container = container;
       this.cards = [];
     }
     render = (array) => {
       array.forEach((card) => {
-        this.container.append(card.cardElement)
+        this._container.append(card.cardElement)
       })
     }
 

@@ -5,7 +5,7 @@ export class Statistics {
         this.news = news;
     }
 
-    toIsoDate = (date) => {
+    _toIsoDate = (date) => {
         date = date.toISOString();
         date = date.split('T')[0];
         return date;
@@ -13,7 +13,7 @@ export class Statistics {
     
     calcMentions = () => {
         const isoDays = this.days.map(item => {
-            return item = this.toIsoDate(item);
+            return item = this._toIsoDate(item);
         })
         const resultsArr = isoDays.map(day => {
             let titleCounter = 0;

@@ -4,7 +4,7 @@ export class SearchInput {
     this.form = form;
   }
 
-  checkInputValidity = (input) => {
+  _checkInputValidity = (input) => {
     input.setCustomValidity ('');
 
     if (input.validity.valueMissing) {
@@ -22,21 +22,21 @@ export class SearchInput {
     return input.checkValidity();
   }
 
-  isFieldValid = (input) => {
+  _isFieldValid = (input) => {
     const errorElem = input.parentNode.querySelector(`.search-form__hint`);
-    const answer = this.checkInputValidity(input);
+    const answer = this._checkInputValidity(input);
     if (errorElem !== null ) {
       errorElem.textContent = input.validationMessage;
     }
     return answer;
   }
 
-  isFormValid = (form) => {
+  _isFormValid = (form) => {
     const inputs = [...form.elements];
     let valid = true;
     inputs.forEach((input) => {
       if (input.type !== 'submit' && input.type !== 'button') {
-        if (!this.isFieldValid(input)) {
+        if (!this._isFieldValid(input)) {
           valid = false;
         }
       }
@@ -44,13 +44,13 @@ export class SearchInput {
     return valid
   }
 
-  sendForm = (event) => {
+  _sendForm = (event) => {
     event.preventDefault();
     const currentForm = event.target;
-    const isValid = this.isFormValid(currentForm);
+    const isValid = this._isFormValid(currentForm);
 
     if (isValid) {
-      this.resetErrors();
+      this._resetErrors();
     }
   }
 
@@ -62,30 +62,30 @@ export class SearchInput {
     }
   }
 
-  handlerInputForm = (event) => {
+  _handlerInputForm = (event) => {
     const submit = event.currentTarget.querySelector('.button');
     const [...inputs] = event.currentTarget.elements;
 
-    this.isFieldValid(event.target);
+    this._isFieldValid(event.target);
 
-    if (inputs.every(this.isFieldValid)) {
+    if (inputs.every(this._isFieldValid)) {
       this.setSubmitButtonState(submit, true);
     } else {
       this.setSubmitButtonState(submit, false);
     }
   }
 
-  resetErrors() {
+  _resetErrors() {
     this.form.querySelectorAll('.search-form__hint').forEach((hint) => {
       hint.textContent = '';
     })
   }
 
 
-  _setEventListeners = () => {
+  setEventListeners = () => {
     this.form.addEventListener('submit', this.callback); 
-    this.form.addEventListener('input', this.handlerInputForm);
-    this.form.addEventListener('submit', this.sendForm)
+    this.form.addEventListener('input', this._handlerInputForm);
+    this.form.addEventListener('submit', this._sendForm)
   }
 
 

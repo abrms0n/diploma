@@ -36,36 +36,3 @@ export function getLastWeek(date) {
     date = date.join('-');
     return date
 }
-
-export function renderWeekDay(date) {
-    return `${date.toLocaleString('ru', {day: 'numeric'})}, ${date.toLocaleString('ru', {weekday: 'short'})}`
-}
-
-export function renderQuery(askedElem, query) {
-    askedElem.textContent = `Вы спросили «${query}»`
-}
-
-export function renderMentions(days, elements) {
-    elements.forEach((item, index) => {
-        item.setAttribute('style', `width: ${days[index]}%`);
-        item.textContent = days[index];
-    })
-};
-
-export function renderDays(monthElem, daysElems, nowDate) {
-    let today = new Date();
-    today = today.toLocaleString('ru', {month: 'long'});
-    monthElem.textContent = `дата (${today})`
-    daysElems.forEach((item, index) => {
-        item.textContent = renderWeekDay(new Date(nowDate.getFullYear(), nowDate.getMonth(), nowDate.getDate()+(index-6)))
-    })
-}
-
-export function renderQuantity(news, queryStr, total, weekElem, titlesElem) {
-    const results = news.filter(item => {
-        return item.title.toLowerCase().includes(queryStr)
-    }) 
-    const str = total;
-    weekElem.textContent = str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-    titlesElem.textContent = results.length;
-}

@@ -1,12 +1,12 @@
 export class CommitCard {
     constructor(name, date, link, imageLink, email, text, container) {
-      this.name = name;
-      this.date = date;
-      this.link = link;
-      this.imageLink = imageLink;
-      this.text = text;
-      this.email = email;
-      this.container = container;
+      this._name = name;
+      this._date = date;
+      this._link = link;
+      this._imageLink = imageLink;
+      this._text = text;
+      this._email = email;
+      this._container = container;
     }
 
     create = () => {
@@ -14,7 +14,7 @@ export class CommitCard {
       card.classList.add('card');
       card.classList.add('card_type_commit');
       card.classList.add('swiper-slide');
-      card.setAttribute('href', this.link);
+      card.setAttribute('href', this._link);
 
       const cardInfo = document.createElement('div');
       cardInfo.classList.add('card__info');
@@ -22,15 +22,15 @@ export class CommitCard {
 
       const cardDate = document.createElement('p');
       cardDate.classList.add('card__date');
-      cardDate.textContent = this.date;
+      cardDate.textContent = this._date;
 
       const cardAuthor = document.createElement('div');
       cardAuthor.classList.add('card__author');
 
       const avatar = document.createElement('img');
       avatar.classList.add('card__avatar');
-      avatar.setAttribute('src', this.imageLink);
-      avatar.setAttribute('alt', this.name);
+      avatar.setAttribute('src', this._imageLink);
+      avatar.setAttribute('alt', this._name);
 
       const nameBox = document.createElement('div');
       nameBox.classList.add('card__name-box');
@@ -39,15 +39,15 @@ export class CommitCard {
       cardName.classList.add('page-title');
       cardName.classList.add('page-title_size_sm');
       cardName.classList.add('page-title_type_commit');
-      cardName.textContent = this.name;
+      cardName.textContent = this._name;
 
       const cardEmail = document.createElement('p');
       cardEmail.classList.add('card__email');
-      cardEmail.textContent = this.email;
+      cardEmail.textContent = this._email;
 
       const cardText = document.createElement('p');
       cardText.classList.add('card__intro');
-      cardText.textContent = this.text;
+      cardText.textContent = this._text;
 
       card.appendChild(cardInfo);
       cardInfo.appendChild(cardDate);

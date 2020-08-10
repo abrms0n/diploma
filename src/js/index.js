@@ -7,12 +7,21 @@ import { NewsCard } from './components/NewsCard.js';
 import { NewsCardList } from './components/NewsCardList.js';
 import { SearchInput } from './components/SearchInput';
 import { DataStorage } from './modules/DataStorage.js';
-import { ERROR_BOX, NOT_FOUND, PRELOADER, CARDS_BOX, NEWS_LIST, TODAY, SEARCH_FORM, SEARCH_INPUT, NEWS_API_TOKEN, NEWS_URL_DEV, NEWS_URL, PAGE_SIZE_NEWS_API, IS_DEV, SHOW_MORE, IMAGES } from './constants/constants.js';
+import { TODAY, NEWS_API_TOKEN, NEWS_URL_DEV, NEWS_URL, PAGE_SIZE_NEWS_API, IS_DEV } from './constants/constants.js';
 import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils.js'
 
 (function indexApp() {
 
-    const newsCardList = new NewsCardList(NEWS_LIST);
+    const preloader = document.querySelector('.preloader');
+    const errorBox = document.querySelector('#error');
+    const notFound = document.querySelector('#notFound');
+    const cardsBox = document.querySelector('.found');
+    const newsList = document.querySelector('.found__cards');
+    const showMoreBtn = document.querySelector('#showMore')
+    const searchForm = document.querySelector('.search-form');
+    const searchFormInput = document.querySelector('.search-form__input');
+    const submitBtn = document.querySelector('.button_theme_blue');
+    const newsCardList = new NewsCardList(newsList);
     const weekAgo = getLastWeek(TODAY);
     const url = (IS_DEV ? NEWS_URL_DEV : NEWS_URL);
     const newsOptions = {
@@ -28,66 +37,68 @@ import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils
     const storage = new DataStorage(localStorage);
 
     function renderNewsCards() {
+        searchInput.setSubmitButtonState(submitBtn, true);
         const parsed = storage.parse();
         if (parsed.length === 0) {
-            renderError(true, CARDS_BOX, NOT_FOUND);
+            renderError(true, cardsBox, notFound);
         } else {
-            renderError(false, CARDS_BOX, NOT_FOUND);
+            renderError(false, cardsBox, notFound);
             const news = parsed.map(item => {                        
                 item = new NewsCard(item.title, rusifyDate(item.publishedAt), item.url, item.urlToImage, item.description, item.source.name, newsCardList); 
                 item.create();
                 newsCardList.cards.push(item);
                 return item
             });
-            CARDS_BOX.classList.remove(`${CARDS_BOX.classList[0]}_is-hidden`);
+            cardsBox.classList.remove(`${cardsBox.classList[0]}_is-hidden`);
             newsCardList.render(newsCardList.getHiddenCards());
             if (newsCardList.cards.length < 1) {
-                SHOW_MORE.setAttribute('style', 'display: none');
+                showMoreBtn.setAttribute('style', 'display: none');
             }
         } 
     }
     
     function saveNewsToLocalStorage() {
-        renderLoading(true, CARDS_BOX, PRELOADER);
-        renderError(false, CARDS_BOX, NOT_FOUND);
-        renderError(false, CARDS_BOX, ERROR_BOX);
-        SHOW_MORE.setAttribute('style', 'display: block');
+        renderLoading(true, cardsBox, preloader);
+        searchInput.setSubmitButtonState(submitBtn, false);
+        renderError(false, cardsBox, notFound);
+        renderError(false, cardsBox, errorBox);
+        showMoreBtn.setAttribute('style', 'display: block');
         newsCardList.cards = [];
         storage.clear();
-        NEWS_LIST.textContent = '';
+        newsList.textContent = '';
         api.getNews()
         .then((data) => {
-            const bit = data.articles.slice(0, 100);
+            const bit = data.articles.slice(0, PAGE_SIZE_NEWS_API);
             localStorage.news = JSON.stringify(bit);
-            localStorage.query = SEARCH_INPUT.value;
+            localStorage.query = searchFormInput.value;
             localStorage.total = data.totalResults;
             renderNewsCards();
         })
         .catch((err) => {
             console.log(`Error is: ${err}`);
-            renderError(true, CARDS_BOX, ERROR_BOX);
+            renderError(true, cardsBox, errorBox);
         })
-        .finally(() => renderLoading(false, CARDS_BOX, PRELOADER))
+        .finally(() => renderLoading(false, cardsBox, preloader))
     }
 
-    SHOW_MORE.addEventListener('click', () => {
+    showMoreBtn.addEventListener('click', () => {
         newsCardList.render(newsCardList.getHiddenCards());
         if (newsCardList.cards.length === 0) {
-            SHOW_MORE.setAttribute('style', 'display: none');
+            showMoreBtn.setAttribute('style', 'display: none');
         }
     })
 
     function submit(event) {
         event.preventDefault();
-        api.options.q = SEARCH_INPUT.value;
+        api.options.q = searchFormInput.value;
         saveNewsToLocalStorage();
     }
 
-    const searchInput = new SearchInput(submit, SEARCH_FORM);
-    searchInput._setEventListeners();
+    const searchInput = new SearchInput(submit, searchForm);
+    searchInput.setEventListeners();
 
     if (storage.check()) {
-        SEARCH_INPUT.value = storage.storage.query;
+        searchFormInput.value = storage.storage.query;
         renderNewsCards();
     }
 
