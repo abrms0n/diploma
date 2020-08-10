@@ -16,7 +16,6 @@ import {rusifyDate, renderLoading, renderError} from '../utils/utils.js'
   const slider = document.querySelector('.slider');
   const preloader = document.querySelector('.preloader');
   const errorBox = document.querySelector('#error');
-
   const mySwiper = new Swiper('.slider', {
     // Optional parameters
     loop: false,
@@ -51,12 +50,9 @@ import {rusifyDate, renderLoading, renderError} from '../utils/utils.js'
       prevEl: '.slider__button-prev',
     }
   })
-
-
   const api = new GitHubApi({
     baseUrl: (IS_DEV ? GITHUB_URL_DEV : GITHUB_URL)
   });
-
   const commitCardList = new CommitCardList(commitsList);
 
   function renderCommitCards() {

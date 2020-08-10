@@ -5,8 +5,7 @@ export class SearchInput {
   }
 
   _checkInputValidity = (input) => {
-    input.setCustomValidity ('');
-
+    input.setCustomValidity('');
     if (input.validity.valueMissing) {
       input.setCustomValidity ('Это обязательное поле');
       return false
@@ -48,7 +47,6 @@ export class SearchInput {
     event.preventDefault();
     const currentForm = event.target;
     const isValid = this._isFormValid(currentForm);
-
     if (isValid) {
       this._resetErrors();
     }
@@ -65,9 +63,7 @@ export class SearchInput {
   _handlerInputForm = (event) => {
     const submit = event.currentTarget.querySelector('.button');
     const [...inputs] = event.currentTarget.elements;
-
     this._isFieldValid(event.target);
-
     if (inputs.every(this._isFieldValid)) {
       this.setSubmitButtonState(submit, true);
     } else {
@@ -81,14 +77,11 @@ export class SearchInput {
     })
   }
 
-
   setEventListeners = () => {
     this.form.addEventListener('submit', this.callback); 
     this.form.addEventListener('input', this._handlerInputForm);
     this.form.addEventListener('submit', this._sendForm)
   }
-
-
 }
 
 

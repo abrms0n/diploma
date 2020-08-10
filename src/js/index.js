@@ -81,13 +81,6 @@ import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils
         .finally(() => renderLoading(false, cardsBox, preloader))
     }
 
-    showMoreBtn.addEventListener('click', () => {
-        newsCardList.render(newsCardList.getHiddenCards());
-        if (newsCardList.cards.length === 0) {
-            showMoreBtn.setAttribute('style', 'display: none');
-        }
-    })
-
     function submit(event) {
         event.preventDefault();
         api.options.q = searchFormInput.value;
@@ -95,11 +88,19 @@ import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils
     }
 
     const searchInput = new SearchInput(submit, searchForm);
-    searchInput.setEventListeners();
+   
+    showMoreBtn.addEventListener('click', () => {
+        newsCardList.render(newsCardList.getHiddenCards());
+        if (newsCardList.cards.length === 0) {
+            showMoreBtn.setAttribute('style', 'display: none');
+        }
+    })
 
     if (storage.check()) {
         searchFormInput.value = storage.storage.query;
         renderNewsCards();
     }
+
+    searchInput.setEventListeners();
 
 }());

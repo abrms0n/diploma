@@ -46,7 +46,6 @@ export class NewsCard {
       cardSource.classList.add('card__source');
       cardSource.textContent = this._source;
 
-
       card.appendChild(cardPicBox);
       cardPicBox.appendChild(cardPic);
       card.appendChild(cardInfo);
@@ -54,7 +53,6 @@ export class NewsCard {
       cardInfo.appendChild(cardTitle);
       cardInfo.appendChild(cardText);
       cardInfo.appendChild(cardSource);
-
 
       this.cardElement = card;
 

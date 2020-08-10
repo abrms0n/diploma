@@ -13,15 +13,12 @@ import {Statistics} from '../components/Statistics.js';
     const month = document.querySelector('#month');
     const daysElems = document.querySelectorAll('.day');
     const news = JSON.parse(localStorage.news);
-
     let days = [1,2,3,4,5,6,7];
     days = days.map((item, index) => {
         return item = new Date(NOW.getFullYear(), NOW.getMonth(), NOW.getDate()+(-index+1));
     });
-
     const stats = new Statistics(days, QUERY, news)
-
-
+    
     function renderWeekDay(date) {
         return `${date.toLocaleString('ru', {day: 'numeric'})}, ${date.toLocaleString('ru', {weekday: 'short'})}`
     }
@@ -65,7 +62,6 @@ import {Statistics} from '../components/Statistics.js';
         })
         return percentsArr;
     }
-    
     
     renderMentions(calcPercents(stats.calcMentions()), whiskers);
     renderQuery(asked, QUERY);
