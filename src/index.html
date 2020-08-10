@@ -33,11 +33,12 @@
                     Введите в поиске любую тему и узнайте, насколько популярной она была в новостях за прошедшую неделю.
                 </p>
                 <form class="search-form">
-                    <input type="text" pattern="^[а-яА-ЯёЁa-zA-Z0-9]+$" placeholder="Введите тему новости" class="search-form__input" required>
-                    <button type="submit" class="button button_theme_blue">Искать</button>
+                    <input type="text" minlength="2" maxlength="30" pattern="^[а-яА-ЯёЁ0-9\s]+$" placeholder="Введите тему новости" class="search-form__input" required>
+                    <button disabled type="submit" class="button button_theme_blue">Искать</button>
+                    <p class="search-form__hint"></p>
                 </form>
             </div>
-        </section>
+        </section> 
             
         <div class="preloader">
             <i class="preloader__anim"></i>

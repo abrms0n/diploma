@@ -41,7 +41,6 @@ import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils
             });
             CARDS_BOX.classList.remove(`${CARDS_BOX.classList[0]}_is-hidden`);
             newsCardList.render(newsCardList.getHiddenCards());
-            showStubs();
             if (newsCardList.cards.length < 1) {
                 SHOW_MORE.setAttribute('style', 'display: none');
             }
@@ -91,8 +90,5 @@ import {rusifyDate, getLastWeek, renderError, renderLoading} from './utils/utils
         SEARCH_INPUT.value = storage.storage.query;
         renderNewsCards();
     }
-
-    
-
 
 }());
