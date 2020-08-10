@@ -20,6 +20,9 @@ export class NewsCard {
       const cardPic = document.createElement('img');
       cardPic.classList.add('card__pic');
       cardPic.setAttribute('src', this.imageLink);
+      if (this.imageLink === null) {
+        cardPic.setAttribute('src', '../images/noimage.jpg')
+      }
       cardPic.setAttribute('alt', this.title)
 
       const cardInfo = document.createElement('div');

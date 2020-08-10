@@ -8,4 +8,9 @@ export class DataStorage {
     clear = () => {
         return this.storage.clear();
     }
+    check = () => {
+        if (this.storage.query) {
+            return true;
+        }
+    }
 }

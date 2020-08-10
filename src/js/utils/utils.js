@@ -69,9 +69,3 @@ export function renderQuantity(news, queryStr, total, weekElem, titlesElem) {
     weekElem.textContent = str.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     titlesElem.textContent = results.length;
 }
-
-export function checkStorage() {
-    if (localStorage.query) {
-        return true;
-    }
-}

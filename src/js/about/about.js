@@ -7,10 +7,8 @@ import 'swiper/swiper-bundle.css';
 import {CommitCard} from '../components/CommitCard.js';
 import {CommitCardList} from '../components/CommitCardList.js';
 import {GitHubApi} from '../modules/GitHubApi.js';
-import {GITHUB_URL_DEV, GITHUB_URL, COMMITS_LIST, SLIDER, PRELOADER, ERROR_BOX} from '../constants/constants.js';
-import {rusifyDate, renderLoading, renderCommitError} from '../utils/utils.js'
-
-const isDev = process.env.NODE_ENV === 'development';
+import {GITHUB_URL_DEV, GITHUB_URL, COMMITS_LIST, SLIDER, PRELOADER, ERROR_BOX, IS_DEV} from '../constants/constants.js';
+import {rusifyDate, renderLoading, renderError} from '../utils/utils.js'
 
 (function aboutApp() {
 
@@ -22,6 +20,7 @@ const isDev = process.env.NODE_ENV === 'development';
     pagination: {
       el: '.swiper-pagination',
     },
+    init: false,
     scrollbar: false,
     breakpoints: {
       1024: {
@@ -50,10 +49,10 @@ const isDev = process.env.NODE_ENV === 'development';
 
 
   const api = new GitHubApi({
-    baseUrl: (isDev ? GITHUB_URL_DEV : GITHUB_URL)
+    baseUrl: (IS_DEV ? GITHUB_URL_DEV : GITHUB_URL)
   });
 
-  const COMMIT_CARD_LIST = new CommitCardList(COMMITS_LIST);
+  const commitCardList = new CommitCardList(COMMITS_LIST);
 
   function renderCommitCards() {
     renderLoading(true, SLIDER, PRELOADER);
@@ -65,7 +64,9 @@ const isDev = process.env.NODE_ENV === 'development';
             item.create();
             return item
         });
-        COMMIT_CARD_LIST.render(commits);
+        SLIDER.classList.remove(`slider_is-hidden`);
+        commitCardList.render(commits);
+        mySwiper.init();
 
     })
     .catch((err) => {
