@@ -14,11 +14,11 @@ new webpack.DefinePlugin({
 module.exports = {
   entry: { 
     main: './src/js/index.js',
-    about: './src/js/about.js',
-    analysis: './src/js/analysis.js' 
-},                                           // точки входа
+    about: './src/js/about/about.js',
+    analysis: './src/js/analysis/analysis.js' 
+},                                   
   output: {
-    path: path.resolve(__dirname, 'dist'),   // точки выхода
+    path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].[chunkhash].js'
   },
   module: {
@@ -56,10 +56,8 @@ module.exports = {
                     loader: 'css-loader', 
                     options: { importLoaders: 2 }
                 },      
-                { 
-                    loader: 'postcss-loader',
-                    options: { publicPath: '../' },
-                }
+                    'postcss-loader'
+              
             ]
       },
       {

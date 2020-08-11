@@ -15,3 +15,5 @@
 @import url(../blocks/slider-header/slider-header.css);
 @import url(../blocks/slider/slider.css);
 @import url(../blocks/button/button.css);
+@import url(../blocks/preloader/preloader.css);
+@import url(../blocks/not-found/not-found.css);

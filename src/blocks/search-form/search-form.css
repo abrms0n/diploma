@@ -1,4 +1,5 @@
 @import url(./__input/search-form__input.css);
+@import url(./__hint/seach-form__hint.css);
 
 .search-form {
     width: 100%;

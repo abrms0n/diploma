@@ -1,0 +1,22 @@
+.search-form__hint {
+    color: #fff;
+    font-size: 16px;
+    position: absolute;
+    top: 72px;
+    left: 24px;
+}
+
+@media screen and (max-width: 1024px) {
+    .search-form__hint {
+        top: 60px;
+        left: 24px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .search-form__hint {
+        font-size: 12px;
+        top: 56px;
+        left: 16px
+    }
+}

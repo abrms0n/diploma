@@ -13,8 +13,13 @@
 }
 
 .button:focus {
-    border: 2px solid #ac0101;
+    border: 2px solid #2f71e5;
     outline: none;
+}
+
+.button:disabled {
+    background: #bbb;
+    color: #fff;
 }
 
 @media screen and (max-width: 1024px) {
