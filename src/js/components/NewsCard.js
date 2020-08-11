@@ -13,6 +13,7 @@ export class NewsCard {
       const card = document.createElement('a');
       card.classList.add('card');
       card.setAttribute('href', this._link);
+      card.setAttribute('target', "_blank");
 
       const cardPicBox = document.createElement('div');
       cardPicBox.classList.add('card__pic-box');

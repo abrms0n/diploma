@@ -15,6 +15,7 @@ export class CommitCard {
       card.classList.add('card_type_commit');
       card.classList.add('swiper-slide');
       card.setAttribute('href', this._link);
+      card.setAttribute('target', "_blank");
 
       const cardInfo = document.createElement('div');
       cardInfo.classList.add('card__info');
